@@ -1,5 +1,5 @@
 git add README
 git commit -m 'first commit
 
-git remote add origin git@github.comYAYA-CSII2JEE-ProjetVideo.git
-git push -u origin master
+git remote add origine git@github.comYAYA-CSII2JEE-ProjetVideo.git
+git push -u origine master
