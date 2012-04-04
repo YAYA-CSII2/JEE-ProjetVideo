@@ -22,16 +22,9 @@ public class TestVideoClub {
     }
     
     @Test
-    public void testSingletonFonctionne() {
+    public void testSingletonInstanceUnique() {
         VideoClub vc2 = VideoClub.getInstance();
         
         assertEquals(vc, vc2);
-    }
-    
-    @Test
-    public void testSingletonFonctionne2() {
-        VideoClub vc2 = new VideoClub();
-        
-        assertNotSame(vc, vc2);
     }
 }
