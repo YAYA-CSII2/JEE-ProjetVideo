@@ -1,5 +1,0 @@
-1) pull
-2) work
-3)Add les fichiers travaillés
-4) commit (message)
-5) push
