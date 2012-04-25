@@ -19,7 +19,7 @@ public class ProduitDAO {
 		// pr�paration des ressources utilis�es
 		Statement stmt = null;
 		ResultSet rs = null;
-		String request = "select * from produit where id = "+idProduit;
+		String request = "select * from produit where prod_id = "+idProduit;
 		try {
 			//ex�cution de la requ�te
 			conn = ds.getConnection();
@@ -30,11 +30,11 @@ public class ProduitDAO {
 			if(rs.next()) {
 				Produit produit = new Produit();
 				produit.setId(rs.getInt(1));
-				produit.setNom(rs.getString("nom"));
-				produit.setDescription(rs.getString("description"));
-				produit.setCodeBarre(rs.getString("codebarre"));
-				produit.setLienPhoto(rs.getString("lienphoto"));
-				produit.setPrix(rs.getFloat("prix"));
+				produit.setNom(rs.getString("prod_libelle"));
+				produit.setDescription(rs.getString("prod_desc"));
+				produit.setCodeBarre(rs.getString("prod_codebarre"));
+				produit.setLienPhoto(rs.getString("prod_lienphoto"));
+				produit.setPrix(rs.getFloat("prod_prix"));
 				return produit;
 			}
 			
@@ -75,11 +75,11 @@ public class ProduitDAO {
 			while(rs.next()) {
 				Produit produit = new Produit();
 				produit.setId(rs.getInt(1));
-				produit.setNom(rs.getString("nom"));
-				produit.setDescription(rs.getString("description"));
-				produit.setCodeBarre(rs.getString("codebarre"));
-				produit.setLienPhoto(rs.getString("lienphoto"));
-				produit.setPrix(rs.getFloat("prix"));
+				produit.setNom(rs.getString("prod_libelle"));
+				produit.setDescription(rs.getString("prod_desc"));
+				produit.setCodeBarre(rs.getString("prod_codebarre"));
+				produit.setLienPhoto(rs.getString("prod_lienphoto"));
+				produit.setPrix(rs.getFloat("prod_prix"));
 				liste.add(produit);
 			}
 			
@@ -107,7 +107,7 @@ public class ProduitDAO {
 	public void insereProduit(DataSource ds, Produit produit) {
 		// pr�paration des ressources utilis�es
 		PreparedStatement ps = null;
-		String request = "insert into produit (nom, description, codebarre, lienphoto, prix) values (?,?,?,?,?)";
+		String request = "insert into produit (prod_libelle, prod_desc, prod_codebarre, prod_lienphoto, prod_prix) values (?,?,?,?,?)";
 		try {
 			//ex�cution de la requ�te d'insertion
 			conn = ds.getConnection();
