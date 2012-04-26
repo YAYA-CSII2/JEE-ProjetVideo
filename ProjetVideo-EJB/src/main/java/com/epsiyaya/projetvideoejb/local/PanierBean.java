@@ -18,18 +18,7 @@ public class PanierBean implements IPannierSession {
     Map<Integer, ElementPanier> panier = new HashMap<Integer, ElementPanier>();
     int clientId;
 
-    //@Resource(mappedName="J2EProjetVideo") DataSource ds;
-    private static DataSource ds;
-    
-    
-    static {
-        try {
-            InitialContext ctx = new InitialContext();
-            ds = (DataSource) ctx.lookup("jdbc/J2EProjetVideo");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    @Resource(mappedName="J2EProjetVideo") DataSource ds;
 
     @Override
     public void getPannier(int id_cli) {
