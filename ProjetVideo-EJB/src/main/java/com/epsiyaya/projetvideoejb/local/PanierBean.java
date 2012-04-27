@@ -21,9 +21,10 @@ public class PanierBean implements IPannierSession {
     @Resource(mappedName="J2EProjetVideo") DataSource ds;
 
     @Override
-    public void getPannier(int id_cli) {
+    public Map<Integer, ElementPanier> getPannier(int id_cli) {
         clientId = id_cli;
         panier = pdao.getPannier(ds, id_cli);
+        return panier;
     }
 
     @Override

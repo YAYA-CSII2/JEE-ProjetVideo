@@ -1,10 +1,12 @@
 package com.epsiyaya.projetvideoejb.remote;
 
+import com.epsiyaya.projetvideoejb.model.ElementPanier;
+import java.util.Map;
 import javax.ejb.Remote;
 
 @Remote
 public interface IPannierSession {
-	public void getPannier(int id_cli);
+	public Map<Integer, ElementPanier> getPannier(int id_cli);
 	
 	public void addProduit(int idProduit, int quantitee);
 	
