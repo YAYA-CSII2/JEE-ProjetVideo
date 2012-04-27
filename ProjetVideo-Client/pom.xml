@@ -29,6 +29,7 @@
             <version>3.1.1</version>
             <scope>provided</scope>
         </dependency>
+        
         <dependency>
             <groupId>com.epsiyaya</groupId>
             <artifactId>ProjetVideo-EJB</artifactId>
