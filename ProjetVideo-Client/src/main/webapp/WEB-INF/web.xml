@@ -4,6 +4,7 @@
         <servlet-name>Controlleur</servlet-name>
         <servlet-class>com.projetvideo.controlleur.Controlleur</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Controlleur</servlet-name>
         <url-pattern>/Controlleur</url-pattern>
