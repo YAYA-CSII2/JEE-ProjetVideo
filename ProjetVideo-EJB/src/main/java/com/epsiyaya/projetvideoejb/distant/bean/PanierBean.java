@@ -1,12 +1,12 @@
-package com.epsiyaya.projetvideoejb.local;
+package com.epsiyaya.projetvideoejb.distant.bean;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Map;
 import java.util.HashMap;
-import com.epsiyaya.projetvideoejb.remote.IPannierSession;
-import com.epsiyaya.projetvideoejb.dao.ProduitDAO;
-import com.epsiyaya.projetvideoejb.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
+import com.epsiyaya.projetvideoejb.metier.dao.ProduitDAO;
+import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
 import javax.ejb.Stateful;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;

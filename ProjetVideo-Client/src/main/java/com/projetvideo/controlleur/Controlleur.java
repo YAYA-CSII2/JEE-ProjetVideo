@@ -5,7 +5,7 @@
 package com.projetvideo.controlleur;
 
 
-import com.epsiyaya.projetvideoejb.remote.IPannierSession;
+import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
 
 public class Controlleur extends HttpServlet {
 
-    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.remote.IPannierSession";
+    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IPannierSession";
 
     @Override
     public void init(ServletConfig config) throws ServletException {

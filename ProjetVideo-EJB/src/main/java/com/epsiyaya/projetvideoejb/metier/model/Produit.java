@@ -1,4 +1,4 @@
-package com.epsiyaya.projetvideoejb.model;
+package com.epsiyaya.projetvideoejb.metier.model;
 
 public class Produit {
 	private int id;

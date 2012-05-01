@@ -1,6 +1,6 @@
-package com.epsiyaya.projetvideoejb.remote;
+package com.epsiyaya.projetvideoejb.distant.remote;
 
-import com.epsiyaya.projetvideoejb.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
 import java.util.Map;
 import javax.ejb.Remote;
 

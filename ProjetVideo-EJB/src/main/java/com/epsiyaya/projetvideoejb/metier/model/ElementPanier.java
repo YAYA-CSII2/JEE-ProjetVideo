@@ -1,4 +1,4 @@
-package com.epsiyaya.projetvideoejb.model;
+package com.epsiyaya.projetvideoejb.metier.model;
 
 public class ElementPanier implements java.io.Serializable {
 	private int idProduit;

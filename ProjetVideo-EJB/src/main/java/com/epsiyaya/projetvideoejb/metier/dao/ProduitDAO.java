@@ -1,4 +1,4 @@
-package com.epsiyaya.projetvideoejb.dao;
+package com.epsiyaya.projetvideoejb.metier.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import com.epsiyaya.projetvideoejb.model.ElementPanier;
-import com.epsiyaya.projetvideoejb.model.Produit;
+import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.metier.model.Produit;
 import java.sql.*;
 
 public class ProduitDAO {

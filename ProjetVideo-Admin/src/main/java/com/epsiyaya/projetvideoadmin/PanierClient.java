@@ -1,6 +1,6 @@
 package com.epsiyaya.projetvideoadmin;
 
-import com.epsiyaya.projetvideoejb.remote.IPannierSession;
+import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -10,7 +10,7 @@ import javax.rmi.PortableRemoteObject;
 public class PanierClient {
 
     private static int cli_id = 1;
-    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.remote.IPannierSession";
+    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IPannierSession";
 
     public static void main(String[] args) {
         try {
