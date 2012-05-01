@@ -33,7 +33,7 @@ public class ElementPanier implements java.io.Serializable {
 	public String toString() {
 		StringBuffer sb = new StringBuffer("ElementPanier:");
 		sb.append("idProduit:").append(idProduit);
-		sb.append("\tquantité").append(quantite);
+		sb.append("\tquantitee:").append(quantite);
 		sb.append("\tprix:").append(prix);
 		return sb.toString();
 	}
