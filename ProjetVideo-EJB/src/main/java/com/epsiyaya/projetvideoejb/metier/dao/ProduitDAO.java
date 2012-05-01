@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.metier.model.Produit;
 import com.epsiyaya.projetvideoejb.metier.model.Produit;
 import java.sql.*;
 

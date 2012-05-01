@@ -1,4 +1,4 @@
-package com.epsiyaya.projetvideoejb.metier.dao;
+package com.epsiyaya.projetvideoejb.metier.model;
 
 /***********************************************************************
  * Module:  Utilisateur.java
