@@ -14,6 +14,16 @@ public class FilmLoue {
    private Date dateLocation;
    /** @pdOid 82121ccb-3a21-4aaa-b5f0-b6611f539847 */
    private int duree;
+   private Film monFilmLoue;
+
+    public Film getFilmLoue() {
+        return monFilmLoue;
+    }
+
+    public void setFilmLoue(Film FilmLoue) {
+        this.monFilmLoue = FilmLoue;
+    }
+
    
    /** @pdOid 92804197-e806-4791-b8ea-f7a7afab8295 */
    public Date getDateLocation() {
@@ -39,7 +49,15 @@ public class FilmLoue {
    
    /** @pdOid 78817d5e-c4fe-4a56-b4b7-e4c6129e2b3d */
    public FilmLoue() {
+       monFilmLoue=new Film();
       // TODO: implement
+   }
+   
+   public FilmLoue(Film MonFilmLoue,Date DateLocation, int Duree) {
+      // TODO: implement
+       monFilmLoue=MonFilmLoue;
+       duree=Duree;
+       dateLocation=DateLocation;
    }
 
 }

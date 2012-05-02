@@ -110,5 +110,19 @@ public class Film {
    public Film() {
       // TODO: implement
    }
+   
+   public Film(String Nom, String LienFilm, String Synopsis, int Duree, Date DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation) {
+      // TODO: implement
+       reference=Nom+DateDeSortie.toString();
+       nom= Nom;
+       lienFilm=LienFilm;
+       synopsis=Synopsis;
+       duree=Duree;
+       dateDeSortie=DateDeSortie;
+       anneeDeProduction=AnneeDeProduction;
+       prixAchat=PrixAchat;
+       prixLocation=PrixLocation;
+   }
+   
 
 }

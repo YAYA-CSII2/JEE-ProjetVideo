@@ -7,6 +7,7 @@ package com.epsiyaya.projetvideoejb.metier.model;
  ***********************************************************************/
 
 import java.util.*;
+import com.epsiyaya.projetvideoejb.metier.model.FilmLoue;
 
 /** @pdOid e1a1382a-ac78-4c46-b8fc-5e121317009f */
 public class Utilisateur {
@@ -26,6 +27,8 @@ public class Utilisateur {
    private String codePostale;
    /** @pdOid f1176a60-045a-44b2-9592-0eb7dbdbaf66 */
    private String pays;
+   private boolean client;
+   private boolean administrateur;
    
    /** @pdOid 74aab90e-4250-4351-ad40-2d745f25252b */
    public String getLogin() {
@@ -118,6 +121,21 @@ public class Utilisateur {
    /** @pdOid 9c717cdb-fbad-4dec-bca4-eecd71b4d6f4 */
    public Utilisateur() {
       // TODO: implement
+   }
+   
+   public Utilisateur(String Login, String MotDePasse, String Nom, String Prenom, String Adresse,
+           String CodePostale, String Pays, boolean Client, Boolean Administrateur) {
+      // TODO: implement
+       login=Login;
+       motDePasse= MotDePasse;
+       nom=Nom;
+       prenom=Prenom;
+       adresse=Adresse;
+       codePostale=CodePostale;
+       pays=Pays;
+       client= Client;
+       administrateur=Administrateur;
+       
    }
 
 }
