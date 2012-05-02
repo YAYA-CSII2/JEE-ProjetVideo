@@ -1,45 +1,96 @@
-
-
-CREATE TABLE IF NOT EXISTS `elementpanier` (
-  `id_prod` int(11) NOT NULL,
-  `quantite` int(11) DEFAULT NULL,
-  `prix` float DEFAULT NULL,
-  `id_cli` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_prod`)
+CREATE TABLE utilisateur (
+	util_id number NOT NULL AUTO_INCREMENT,
+	util_login VARCHAR(50) NOT NULL,
+	util_motdepasse VARCHAR(100) NOT NULL,
+	util_nom VARCHAR(50),
+	util_prenom VARCHAR(50),
+	util_adresse VARCHAR(100),
+	util_codepostale CHAR(5),
+	util_pays VARCHAR(50),
+	util_numerocartecredit CHAR(16),
+	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `produit`
---
-
-CREATE TABLE IF NOT EXISTS `produit` (
-  `prod_id` int(11) NOT NULL,
-  `prod_libelle` varchar(150) DEFAULT NULL,
-  `prod_desc` varchar(255) DEFAULT NULL,
-  `prod_codebarre` varchar(10) DEFAULT NULL,
-  `prod_lienphoto` varchar(70) DEFAULT NULL,
-  `prod_prix` float DEFAULT NULL,
-  PRIMARY KEY (`prod_id`)
+CREATE TABLE film (
+	film_id number NOT NULL AUTO_INCREMENT,
+	film_nom VARCHAR(50) NOT NULL,
+	film_synopsis VARCHAR(255),
+	film_datedesortie DATE NOT NULL,
+	film_duree number NOT NULL,
+	film_lienFilm VARCHAR(150),
+	film_anneedeproduction YEAR(4),
+	film_prixachat float,
+	film_prixlocation float,
+	film_idRealisateur number NOT NULL,
+	PRIMARY KEY(film_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `produit`
---
+CREATE TABLE cartevideoclub (
+	cvc_id number NOT NULL AUTO_INCREMENT,
+	cvc_pointfidelite number NOT NULL,
+	cvc_idPosseseur number NOT NULL,
+	PRIMARY KEY(cvc_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `produit` (`prod_id`, `prod_libelle`, `prod_desc`, `prod_codebarre`, `prod_lienphoto`, `prod_prix`) VALUES
-(1, 'produit1', 'produit1 !!', '1015239', 'nophoto', 10),
-(2, 'produit2', 'cest le produit2', '1015237', 'nophoto', 5.5),
-(3, 'Fleur', 'flower', '1015270', 'nophoto', 3.75),
-(4, 'FISHHH', 'wut', '119430973', 'nophoto', 20.9);
+--duree = 0  =>  film acheté
+CREATE TABLE filmloue (
+	filml_idFilm number NOT NULL,
+	filml_idUtil VARCHAR(50) NOT NULL,
+	filml_datelocation DATE NOT NULL,
+	filml_duree number NOT NULL,
+	PRIMARY KEY(filml_idFilm, filml_idUtil)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contraintes pour les tables exportées
---
+CREATE TABLE noteFilm (
+	nfilm_idFilm number NOT NULL,
+	nfilm_idUtil number NOT NULL,
+	nfilm_note number,
+	nfilm_commentaire VARCHAR(255),
+	PRIMARY KEY(nfilm_idFilm, nfilm_idUtil)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contraintes pour la table `elementpanier`
---
-ALTER TABLE `elementpanier`
-  ADD CONSTRAINT `fk_prod` FOREIGN KEY (`id_prod`) REFERENCES `produit` (`prod_id`);
+CREATE TABLE bandeannonce (
+	bd_id number NOT NULL AUTO_INCREMENT,
+	bd_lienVideo VARCHAR(150) NOT NULL,
+	bd_description VARCHAR(255),
+	bd_idFilm number NOT NULL,
+	PRIMARY KEY(bd_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE photo (
+	photo_id number NOT NULL AUTO_INCREMENT,
+	photo_lienPhoto VARCHAR(150) NOT NULL,
+	photo_description VARCHAR(255),
+	photo_idFilm number NOT NULL,
+	PRIMARY KEY(photo_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE personne (
+	pers_id number NOT NULL AUTO_INCREMENT,
+	pers_nom VARCHAR(50) NOT NULL,
+	pers_prenom VARCHAR(50) NOT NULL,
+	pers_Datedenaissance DATE NOT NULL,
+	pers_description VARCHAR(255),
+	PRIMARY KEY(pers_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE jouer (
+	jouer_idFilm number NOT NULL,
+	jouer_idPersonne number NOT NULL,
+	PRIMARY KEY(joueur_idFilm, joueur_idPersonne)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;7
+
+
+ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personne(pers_id);
+
+ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id);
+
+ALTER TABLE filmloue ADD CONSTRAINT fk_filmlFilm FOREIGN KEY (filml_idFilm) REFERENCES film(film_id);
+ALTER TABLE filmloue ADD CONSTRAINT fk_filmlUtil FOREIGN KEY (filml_idUtil) REFERENCES utilisateur(util_id);
+
+ALTER TABLE bandeannonce ADD CONSTRAINT fk_bdFilm FOREIGN KEY (bd_idFilm) REFERENCES film(film_id);
+
+ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFERENCES film(film_id);
+
+ALTER TABLE jouer ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id);
+ALTER TABLE jouer ADD CONSTRAINT fk_jouerPersonne FOREIGN KEY (jouer_idPersonne) REFERENCES personne(pers_id);
