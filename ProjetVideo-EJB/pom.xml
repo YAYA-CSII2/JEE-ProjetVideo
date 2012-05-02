@@ -20,6 +20,12 @@
             <artifactId>javax.ejb</artifactId>
             <version>3.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.epsiyaya</groupId>
+            <artifactId>ProjetVideo-Admin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
