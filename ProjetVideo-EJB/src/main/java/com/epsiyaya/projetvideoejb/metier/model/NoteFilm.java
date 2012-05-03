@@ -22,10 +22,10 @@ public class NoteFilm {
       return note;
    }
    
-   /** @param newNote
-    * @pdOid 32dd66e8-977b-45a6-a8ea-fe3dee21cf07 */
-   public void setNote(int newNote) {
-      note = newNote;
+
+   /** @pdOid 32dd66e8-977b-45a6-a8ea-fe3dee21cf07 */
+   public void setNote(int Note) {
+      note = Note;
    }
    
    /** @pdOid db6b5f4c-f36d-4305-9271-1da444905a5f */
@@ -33,10 +33,10 @@ public class NoteFilm {
       return description;
    }
    
-   /** @param newDescription
-    * @pdOid 73cd7c75-4f8c-4563-b3ce-ab4f89f2ea21 */
-   public void setDescription(String newDescription) {
-      description = newDescription;
+
+   /** @pdOid 73cd7c75-4f8c-4563-b3ce-ab4f89f2ea21 */
+   public void setDescription(String Description) {
+      description = Description;
    }
    
    /** @pdOid e1f32749-9bb8-48bc-b0b7-9d724eeef36e */

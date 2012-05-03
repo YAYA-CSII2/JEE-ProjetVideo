@@ -30,10 +30,10 @@ public class FilmLoue {
       return dateLocation;
    }
    
-   /** @param newDateLocation
-    * @pdOid d36bb63d-913c-4118-868f-41549f6c0efd */
-   public void setDateLocation(Date newDateLocation) {
-      dateLocation = newDateLocation;
+
+   /** @pdOid d36bb63d-913c-4118-868f-41549f6c0efd */
+   public void setDateLocation(Date DateLocation) {
+      dateLocation = DateLocation;
    }
    
    /** @pdOid 58bff57d-e7d3-4a10-a535-bd8b2bd48716 */

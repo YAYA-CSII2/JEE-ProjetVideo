@@ -55,5 +55,10 @@ public class Categorie {
    {
        films.add(film);
    }
+   
+   public void supprimerFilm(Film film)
+   {
+       films.remove(film);
+   }
 
 }

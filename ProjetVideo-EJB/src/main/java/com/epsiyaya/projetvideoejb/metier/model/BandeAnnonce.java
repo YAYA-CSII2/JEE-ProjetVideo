@@ -22,10 +22,10 @@ public class BandeAnnonce {
       return reference;
    }
    
-   /** @param newReference
-    * @pdOid d5470fdc-4690-49a8-880d-72a6cd92f95b */
-   public void setReference(String newReference) {
-      reference = newReference;
+
+   /** @pdOid d5470fdc-4690-49a8-880d-72a6cd92f95b */
+   public void setReference(String Reference) {
+      reference = Reference;
    }
    
    /** @pdOid 1b64db30-e50d-4108-8ceb-a1f117bdd4d6 */
@@ -33,10 +33,10 @@ public class BandeAnnonce {
       return lienVideo;
    }
    
-   /** @param newLienVideo
-    * @pdOid 7f616872-aaca-47c2-8184-4228f0ef4b2c */
-   public void setLienVideo(String newLienVideo) {
-      lienVideo = newLienVideo;
+
+   /** @pdOid 7f616872-aaca-47c2-8184-4228f0ef4b2c */
+   public void setLienVideo(String LienVideo) {
+      lienVideo = LienVideo;
    }
    
    /** @pdOid b08ac774-649c-4fc0-bf8d-36587ece241d */
@@ -44,10 +44,10 @@ public class BandeAnnonce {
       return description;
    }
    
-   /** @param newDescription
-    * @pdOid 28af0821-e140-4de5-9956-c534d4b6d0c2 */
-   public void setDescription(String newDescription) {
-      description = newDescription;
+
+   /** @pdOid 28af0821-e140-4de5-9956-c534d4b6d0c2 */
+   public void setDescription(String Description) {
+      description = Description;
    }
    
    /** @pdOid 8f93960c-b50b-48d9-a4de-d19a497acb72 */

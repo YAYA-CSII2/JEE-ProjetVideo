@@ -27,18 +27,43 @@ public class Utilisateur {
    private String codePostale;
    /** @pdOid f1176a60-045a-44b2-9592-0eb7dbdbaf66 */
    private String pays;
-   private boolean client;
-   private boolean administrateur;
+   private boolean roleClient;
+   private boolean roleAdministrateur;
+   private int pontFidelite;
+
+    public boolean isAdministrateur() {
+        return roleAdministrateur;
+    }
+
+    public void setAdministrateur(boolean RoleAdministrateur) {
+        roleAdministrateur = RoleAdministrateur;
+    }
+
+    public boolean isClient() {
+        return roleClient;
+    }
+
+    public void setClient(boolean RoleClient) {
+        roleClient=RoleClient;
+    }
+
+    public int getPontFidelite() {
+        return pontFidelite;
+    }
+
+    public void setPontFidelite(int pontFidelite) {
+        this.pontFidelite = pontFidelite;
+    }
    
    /** @pdOid 74aab90e-4250-4351-ad40-2d745f25252b */
    public String getLogin() {
       return login;
    }
    
-   /** @param newLogin
-    * @pdOid 7ccb8431-0d99-45d3-9bff-05f8de228756 */
-   public void setLogin(String newLogin) {
-      login = newLogin;
+   
+   /** @pdOid 7ccb8431-0d99-45d3-9bff-05f8de228756 */
+   public void setLogin(String Login) {
+      login = Login;
    }
    
    /** @pdOid 6e808ef7-d222-462c-9d74-f187c4aed249 */
@@ -46,10 +71,10 @@ public class Utilisateur {
       return motDePasse;
    }
    
-   /** @param newMotDePasse
-    * @pdOid 5d96ab9b-c5b6-4a07-a802-cbfe0ea75afa */
-   public void setMotDePasse(String newMotDePasse) {
-      motDePasse = newMotDePasse;
+   
+   /** @pdOid 5d96ab9b-c5b6-4a07-a802-cbfe0ea75afa */
+   public void setMotDePasse(String MotDePasse) {
+      motDePasse = MotDePasse;
    }
    
    /** @pdOid 7c4f740f-36ef-418c-906b-14513f602559 */
@@ -57,10 +82,10 @@ public class Utilisateur {
       return nom;
    }
    
-   /** @param newNom
-    * @pdOid 297dada0-6b43-42fb-9ae4-6d923b25971e */
-   public void setNom(String newNom) {
-      nom = newNom;
+
+   /** @pdOid 297dada0-6b43-42fb-9ae4-6d923b25971e */
+   public void setNom(String Nom) {
+      nom = Nom;
    }
    
    /** @pdOid 522fa4c7-e467-437c-abd0-f356b0dc3e32 */
@@ -68,10 +93,10 @@ public class Utilisateur {
       return prenom;
    }
    
-   /** @param newPrenom
-    * @pdOid e3b37b3c-e633-41b5-9093-e3715dead1b5 */
-   public void setPrenom(String newPrenom) {
-      prenom = newPrenom;
+
+   /** @pdOid e3b37b3c-e633-41b5-9093-e3715dead1b5 */
+   public void setPrenom(String Prenom) {
+      prenom = Prenom;
    }
    
    /** @pdOid 06ce8c0d-28e4-4a17-97da-9d5849e21ce7 */
@@ -79,10 +104,10 @@ public class Utilisateur {
       return numeroCarteCredit;
    }
    
-   /** @param newNumeroCarteCredit
-    * @pdOid 83a7281a-c2a7-4815-b948-07d48c25b0cd */
-   public void setNumeroCarteCredit(ArrayList<String> newNumeroCarteCredit) {
-      numeroCarteCredit = newNumeroCarteCredit;
+   
+   /** @pdOid 83a7281a-c2a7-4815-b948-07d48c25b0cd */
+   public void setNumeroCarteCredit(ArrayList<String> NumeroCarteCredit) {
+      numeroCarteCredit = NumeroCarteCredit;
    }
    
    /** @pdOid 23376071-90b0-4888-8a5c-38a69bfabed9 */
@@ -90,10 +115,10 @@ public class Utilisateur {
       return adresse;
    }
    
-   /** @param newAdresse
-    * @pdOid b13f702a-69c9-4a55-a429-bf03e7007fcb */
-   public void setAdresse(String newAdresse) {
-      adresse = newAdresse;
+
+   /** @pdOid b13f702a-69c9-4a55-a429-bf03e7007fcb */
+   public void setAdresse(String Adresse) {
+      adresse = Adresse;
    }
    
    /** @pdOid 3af4b740-70bf-4e21-828e-9a64a894bfbd */
@@ -101,10 +126,10 @@ public class Utilisateur {
       return codePostale;
    }
    
-   /** @param newCodePostale
-    * @pdOid c39ab11c-56bd-473c-839d-773044065a5a */
-   public void setCodePostale(String newCodePostale) {
-      codePostale = newCodePostale;
+
+   /** @pdOid c39ab11c-56bd-473c-839d-773044065a5a */
+   public void setCodePostale(String CodePostale) {
+      codePostale = CodePostale;
    }
    
    /** @pdOid 0d49d358-53f4-4b56-839d-cfb18611890e */
@@ -112,10 +137,10 @@ public class Utilisateur {
       return pays;
    }
    
-   /** @param newPays
-    * @pdOid cd13f633-6d7d-4cf7-b61a-56bd6c0e6b84 */
-   public void setPays(String newPays) {
-      pays = newPays;
+
+   /** @pdOid cd13f633-6d7d-4cf7-b61a-56bd6c0e6b84 */
+   public void setPays(String Pays) {
+      pays = Pays;
    }
    
    /** @pdOid 9c717cdb-fbad-4dec-bca4-eecd71b4d6f4 */
@@ -124,7 +149,7 @@ public class Utilisateur {
    }
    
    public Utilisateur(String Login, String MotDePasse, String Nom, String Prenom, String Adresse,
-           String CodePostale, String Pays, boolean Client, Boolean Administrateur) {
+           String CodePostale, String Pays, boolean RoleClient, Boolean RoleAdministrateur) {
       // TODO: implement
        login=Login;
        motDePasse= MotDePasse;
@@ -133,8 +158,8 @@ public class Utilisateur {
        adresse=Adresse;
        codePostale=CodePostale;
        pays=Pays;
-       client= Client;
-       administrateur=Administrateur;
+       roleClient= RoleClient;
+       roleAdministrateur=RoleAdministrateur;
        
    }
 

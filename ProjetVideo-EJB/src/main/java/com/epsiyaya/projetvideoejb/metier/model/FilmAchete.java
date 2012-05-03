@@ -18,10 +18,10 @@ public class FilmAchete {
       return dateAchat;
    }
    
-   /** @param newDateAchat
-    * @pdOid e196f4be-ba2c-460e-b6b0-cbb248ed19b2 */
-   public void setDateAchat(Date newDateAchat) {
-      dateAchat = newDateAchat;
+
+   /** @pdOid e196f4be-ba2c-460e-b6b0-cbb248ed19b2 */
+   public void setDateAchat(Date DateAchat) {
+      dateAchat = DateAchat;
    }
    
    /** @pdOid 2d7eed91-66fc-424d-ad1c-e935e21ce0c2 */

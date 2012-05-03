@@ -24,10 +24,10 @@ public class Personne {
       return nom;
    }
    
-   /** @param newNom
-    * @pdOid 1d9266d0-5107-4696-adc7-270213272ef9 */
-   public void setNom(String newNom) {
-      nom = newNom;
+
+   /** @pdOid 1d9266d0-5107-4696-adc7-270213272ef9 */
+   public void setNom(String Nom) {
+      nom = Nom;
    }
    
    /** @pdOid e97db204-b043-4dca-bf38-7e697c8a852d */
@@ -35,10 +35,10 @@ public class Personne {
       return prenom;
    }
    
-   /** @param newPrenom
-    * @pdOid acf3a371-f99d-455b-bd42-3c3b5c5394f0 */
-   public void setPrenom(String newPrenom) {
-      prenom = newPrenom;
+   
+   /** @pdOid acf3a371-f99d-455b-bd42-3c3b5c5394f0 */
+   public void setPrenom(String Prenom) {
+      prenom = Prenom;
    }
    
    /** @pdOid c2f0060b-c741-4362-a6b0-fd619e6ebacf */
@@ -46,10 +46,10 @@ public class Personne {
       return dateDeNaissance;
    }
    
-   /** @param newDateDeNaissance
-    * @pdOid 2590db15-4faf-41aa-a67d-4b648efdaaf0 */
-   public void setDateDeNaissance(Date newDateDeNaissance) {
-      dateDeNaissance = newDateDeNaissance;
+
+   /** @pdOid 2590db15-4faf-41aa-a67d-4b648efdaaf0 */
+   public void setDateDeNaissance(Date DateDeNaissance) {
+      dateDeNaissance = DateDeNaissance;
    }
    
    /** @pdOid b2ac9bf0-ed00-4bcc-bc20-f21eb1121045 */
@@ -57,10 +57,10 @@ public class Personne {
       return description;
    }
    
-   /** @param newDescription
-    * @pdOid 64213eb1-059a-419b-8b03-7de9d327ac2d */
-   public void setDescription(String newDescription) {
-      description = newDescription;
+
+   /** @pdOid 64213eb1-059a-419b-8b03-7de9d327ac2d */
+   public void setDescription(String Description) {
+      description = Description;
    }
    
    /** @pdOid 01123b62-4638-42a0-92a8-b4b38eaab255 */
