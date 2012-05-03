@@ -45,10 +45,9 @@ CREATE TABLE cartevideoclub (
 	PRIMARY KEY(cvc_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---duree = 0  =>  film acheté
 CREATE TABLE filmloue (
 	filml_idFilm int NOT NULL,
-	filml_idUtil VARCHAR(50) NOT NULL,
+	filml_idUtil int NOT NULL,
 	filml_datelocation DATE NOT NULL,
 	filml_duree int NOT NULL,
 	PRIMARY KEY(filml_idFilm, filml_idUtil)
@@ -90,14 +89,14 @@ CREATE TABLE personnalite (
 CREATE TABLE jouer (
 	jouer_idFilm int NOT NULL,
 	jouer_idPersonnalite int NOT NULL,
-	PRIMARY KEY(joueur_idFilm, jouer_idPersonnalite)
+	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;7
 
 
 ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personnalite(pers_id);
 
 ALTER TABLE appartenir
-	ADD CONSTRAINT fk_appCateg FOREIGN KEY (app_categId) REFERENCES categorie(categ_id) ON DELETE SET NULL,
+	ADD CONSTRAINT fk_appCateg FOREIGN KEY (app_categId) REFERENCES categorie(categ_id) ON DELETE CASCADE,
 	ADD CONSTRAINT fk_appFilm FOREIGN KEY (app_filmId) REFERENCES film(film_id) ON DELETE CASCADE;
 
 ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
