@@ -15,6 +15,8 @@ public class NoteFilm {
    /** @pdOid be814b00-1c24-42b7-8d97-dbc52d0e2683 */
    private String description;
    
+   private Film film;
+   
    /** @pdOid 217ffc1c-3b50-4339-a09a-8ddc88063609 */
    public int getNote() {
       return note;
@@ -38,8 +40,9 @@ public class NoteFilm {
    }
    
    /** @pdOid e1f32749-9bb8-48bc-b0b7-9d724eeef36e */
-   public NoteFilm() {
+   public NoteFilm(Film filmNote) {
       // TODO: implement
+       film=filmNote;
    }
 
 }

@@ -21,7 +21,7 @@ public class FilmLoue {
     }
 
     public void setFilmLoue(Film FilmLoue) {
-        this.monFilmLoue = FilmLoue;
+        monFilmLoue = FilmLoue;
     }
 
    
@@ -41,16 +41,9 @@ public class FilmLoue {
       return duree;
    }
    
-   /** @param newDuree
-    * @pdOid 57201870-32fe-4ea0-903b-09f9a0c91789 */
-   public void setDuree(int newDuree) {
-      duree = newDuree;
-   }
-   
-   /** @pdOid 78817d5e-c4fe-4a56-b4b7-e4c6129e2b3d */
-   public FilmLoue() {
-       monFilmLoue=new Film();
-      // TODO: implement
+
+   public void setDuree(int Duree) {
+      duree = Duree;
    }
    
    public FilmLoue(Film MonFilmLoue,Date DateLocation, int Duree) {

@@ -15,6 +15,8 @@ public class Categorie {
    /** @pdOid d2f8d770-c266-447c-8231-3b0167ffdcf4 */
    private String description;
    
+   private ArrayList<Film> films;
+   
    /** @pdOid 4dd7d389-05d1-403f-8e66-cf7e1d5504f8 */
    public String getNom() {
       return nom;
@@ -39,7 +41,19 @@ public class Categorie {
    
    /** @pdOid 80e10cc9-a03f-4e37-a6a9-dc961e73fef2 */
    public Categorie() {
+      films= new ArrayList<Film>();// TODO: implement
+   }
+   
+   public Categorie(String Nom, String Description, ArrayList<Film> Films) {
       // TODO: implement
+       nom=Nom;
+       description=Description;
+       films=Films;
+   }
+   
+   public void ajouterFilm(Film film)
+   {
+       films.add(film);
    }
 
 }

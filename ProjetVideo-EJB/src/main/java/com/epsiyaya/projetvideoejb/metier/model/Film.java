@@ -29,6 +29,11 @@ public class Film {
    /** @pdOid a82dca18-bcb1-467d-a88e-fb6f00cb0326 */
    private Float prixLocation;
    
+   private ArrayList<BandeAnnonce> bandeAnnonces;
+   private ArrayList<Photo> photos;
+   
+   private ArrayList<Categorie> categorie;
+   
    /** @pdOid 278f0dc7-a585-4746-bf7b-546b2b3fee0b */
    public int getDuree() {
       return duree;
@@ -105,15 +110,39 @@ public class Film {
    public void setNom(String newNom) {
       nom = newNom;
    }
+
+    public ArrayList getBandeDannoce() {
+        return bandeAnnonces;
+    }
+
+    public void setBandeDannoce(ArrayList bandeDannoce) {
+        this.bandeAnnonces = bandeDannoce;
+    }
+
+    public Float getPrixAchat() {
+        return prixAchat;
+    }
+
+    public void setPrixAchat(Float prixAchat) {
+        this.prixAchat = prixAchat;
+    }
+
+    public Float getPrixLocation() {
+        return prixLocation;
+    }
+
+    public void setPrixLocation(Float prixLocation) {
+        this.prixLocation = prixLocation;
+    }
    
    /** @pdOid 21d1db8e-23cb-4404-b6de-d003b1a33820 */
    public Film() {
       // TODO: implement
+       bandeAnnonces = new ArrayList();
+       photos= new ArrayList();
    }
    
-   public Film(String Nom, String LienFilm, String Synopsis, int Duree, Date DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation) {
-      // TODO: implement
-       reference=Nom+DateDeSortie.toString();
+   public Film(String Nom, String LienFilm, String Synopsis, int Duree, Date DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, ArrayList<BandeAnnonce> BandeAnnonces, ArrayList<Photo> Photos) {
        nom= Nom;
        lienFilm=LienFilm;
        synopsis=Synopsis;
@@ -122,7 +151,30 @@ public class Film {
        anneeDeProduction=AnneeDeProduction;
        prixAchat=PrixAchat;
        prixLocation=PrixLocation;
+       bandeAnnonces= BandeAnnonces;
+       photos=Photos;
    }
+   
+   public void ajouterBandeAnnoce(BandeAnnonce Bandeannonce)
+   {
+       bandeAnnonces.add(Bandeannonce);
+   }
+   
+   public void supprimerBandeAnnonce(BandeAnnonce Bandeannonce)
+   {
+       bandeAnnonces.remove(Bandeannonce);
+   }
+   
+   public void ajouterPhoto(Photo photo)
+   {
+       photos.add(photo);
+   }
+   
+   public void SupprimerPhoto(Photo photo)
+   {
+       photos.remove(photo);
+   }
+   
    
 
 }
