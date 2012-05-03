@@ -5,6 +5,7 @@ import org.apache.jasper.tagplugins.jstl.ForEach;
 
 public class ElementPanier implements java.io.Serializable {
 	private ArrayList<FilmLoue> filmsLoues;
+        private ArrayList<FilmAchete> filmsAchetes;
 	private float prix;
 	
 	
@@ -28,11 +29,27 @@ public class ElementPanier implements java.io.Serializable {
 	}
         public void calculerPrix()
         {
-            prix=0;
+            prix=calculerPrixFilmsLoue()+calculerPrixFilmsAchete();
+        }
+        
+        public float calculerPrixFilmsLoue()
+        {
+            float prixFilmsLoue=0;
             for(FilmLoue f : filmsLoues)
             {
-                prix=prix+(f.getDuree()*f.getFilmLoue().getPrixAchat());
+                prixFilmsLoue=prixFilmsLoue+(f.getDuree()*f.getFilmLoue().getPrixLocation());
             }
+            return prixFilmsLoue;
+        }
+        
+        public float calculerPrixFilmsAchete()
+        {
+            float prixFilmsAchete=0;
+            for(FilmAchete f : filmsAchetes)
+            {
+                prixFilmsAchete=prixFilmsAchete+f.getFilmAchete().getPrixAchat();
+            }
+            return prixFilmsAchete;
         }
         
         public boolean verifierDejaFilmAchate(String FilmALouer)
@@ -45,6 +62,26 @@ public class ElementPanier implements java.io.Serializable {
             }
             
             return filmDejaAchete;
+        }
+        
+        public void ajouterFilmLoue(FilmLoue filmLoue)
+        {
+            filmsLoues.add(filmLoue);
+        }
+        
+        public void ajouterFilmachete(FilmLoue filmAAchete)
+        {
+            filmsLoues.add(filmAAchete);
+        }
+        
+        public void supprimerFilmLoue(FilmLoue filmASupprimer)
+        {
+            filmsLoues.remove(filmASupprimer);
+        }
+        
+        public void supprimerFilmachete(FilmAchete filmASupprimer)
+        {
+            filmsAchetes.remove(filmASupprimer);
         }
 	
 	

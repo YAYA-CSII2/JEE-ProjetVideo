@@ -10,9 +10,7 @@ import java.util.*;
 
 /** @pdOid 7d0ef445-cbbc-4b7e-a4d6-611401e2fc38 */
 public class Film {
-   /** @pdOid 1bcc4e67-d0ef-45f4-b0ce-18535a6a3a2b */
-   private String reference;
-   /** @pdOid cb5996f1-b369-4ac0-a319-53fb63842105 */
+
    private String nom;
    /** @pdOid 2c8fe78d-8221-4452-969f-7c33b0554bfc */
    private String synopsis;
@@ -33,6 +31,7 @@ public class Film {
    private ArrayList<Photo> photos;
    
    private ArrayList<Categorie> categorie;
+   private Photo affiche;
    
    /** @pdOid 278f0dc7-a585-4746-bf7b-546b2b3fee0b */
    public int getDuree() {
@@ -44,16 +43,6 @@ public class Film {
       duree = Duree;
    }
    
-   /** @pdOid e451d6ae-e4f4-407a-ac56-5b3c6958d698 */
-   public String getReference() {
-      return reference;
-   }
-   
-
-   /** @pdOid 8ffddd36-2a3f-4689-8f6d-f52b9fc850aa */
-   public void setReference(String Reference) {
-      reference = Reference;
-   }
    
    /** @pdOid 41457181-171f-4878-afc4-c20fe1ab883a */
    public Date getDateDeSortie() {
@@ -141,7 +130,7 @@ public class Film {
        photos= new ArrayList();
    }
    
-   public Film(String Nom, String LienFilm, String Synopsis, int Duree, Date DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, ArrayList<BandeAnnonce> BandeAnnonces, ArrayList<Photo> Photos) {
+   public Film(String Nom, String LienFilm, String Synopsis, int Duree, Date DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, ArrayList<BandeAnnonce> BandeAnnonces, ArrayList<Photo> Photos, Photo Affiche) {
        nom= Nom;
        lienFilm=LienFilm;
        synopsis=Synopsis;
@@ -152,7 +141,40 @@ public class Film {
        prixLocation=PrixLocation;
        bandeAnnonces= BandeAnnonces;
        photos=Photos;
+       affiche=Affiche;
    }
+
+    public Photo getAffiche() {
+        return affiche;
+    }
+
+    public void setAffiche(Photo affiche) {
+        this.affiche = affiche;
+    }
+
+    public ArrayList<BandeAnnonce> getBandeAnnonces() {
+        return bandeAnnonces;
+    }
+
+    public void setBandeAnnonces(ArrayList<BandeAnnonce> bandeAnnonces) {
+        this.bandeAnnonces = bandeAnnonces;
+    }
+
+    public ArrayList<Categorie> getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(ArrayList<Categorie> categorie) {
+        this.categorie = categorie;
+    }
+
+    public ArrayList<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(ArrayList<Photo> photos) {
+        this.photos = photos;
+    }
    
    public void ajouterBandeAnnoce(BandeAnnonce Bandeannonce)
    {

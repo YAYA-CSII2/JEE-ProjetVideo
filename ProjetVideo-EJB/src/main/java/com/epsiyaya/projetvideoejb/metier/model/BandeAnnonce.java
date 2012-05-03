@@ -10,23 +10,12 @@ import java.util.*;
 
 /** @pdOid 9de742e2-7549-4fec-b830-ba154100e0a2 */
 public class BandeAnnonce {
-   /** @pdOid 1da52f1d-ac12-4e41-bc27-429512ccda0e */
-   private String reference;
+
    /** @pdOid 84e53a21-f840-469c-9948-ce22ef3eeda0 */
    private String lienVideo;
    /** @pdOid d665c55a-e331-4a86-b55e-ed2fe09c890a */
    private String description;
    
-   /** @pdOid dd42a4da-9950-42d1-b0b8-e73fcc3406b2 */
-   public String getReference() {
-      return reference;
-   }
-   
-
-   /** @pdOid d5470fdc-4690-49a8-880d-72a6cd92f95b */
-   public void setReference(String Reference) {
-      reference = Reference;
-   }
    
    /** @pdOid 1b64db30-e50d-4108-8ceb-a1f117bdd4d6 */
    public String getLienVideo() {

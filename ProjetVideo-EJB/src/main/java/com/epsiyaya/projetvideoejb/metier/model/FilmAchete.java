@@ -12,6 +12,15 @@ import java.util.*;
 public class FilmAchete {
    /** @pdOid d0bde323-a3c9-4a38-9f6e-8a28d10fcdc0 */
    private Date dateAchat;
+   private Film filmAchete;
+
+    public Film getFilmAchete() {
+        return filmAchete;
+    }
+
+    public void setFilmAchete(Film FilmAchete) {
+        filmAchete = FilmAchete;
+    }
    
    /** @pdOid 68cbe502-2e3c-42fa-8539-08344f0c03d8 */
    public Date getDateAchat() {
