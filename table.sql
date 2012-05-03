@@ -11,6 +11,18 @@ CREATE TABLE utilisateur (
 	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE categorie (
+	categ_id number NOT NULL AUTO_INCREMENT,
+	categ_libelle VARCHAR(60) NOT NULL,
+	PRIMARY KEY(categ_id)
+);
+
+CREATE TABLE appartenir (
+	app_categId number NOT NULL,
+	app_filmId number NOT NULL,
+	PRIMARY KEY(app_categId, app_filmId)
+);
+
 CREATE TABLE film (
 	film_id number NOT NULL AUTO_INCREMENT,
 	film_nom VARCHAR(50) NOT NULL,
@@ -65,7 +77,7 @@ CREATE TABLE photo (
 	PRIMARY KEY(photo_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE personne (
+CREATE TABLE personnalite (
 	pers_id number NOT NULL AUTO_INCREMENT,
 	pers_nom VARCHAR(50) NOT NULL,
 	pers_prenom VARCHAR(50) NOT NULL,
@@ -76,21 +88,34 @@ CREATE TABLE personne (
 
 CREATE TABLE jouer (
 	jouer_idFilm number NOT NULL,
-	jouer_idPersonne number NOT NULL,
-	PRIMARY KEY(joueur_idFilm, joueur_idPersonne)
+	jouer_idPersonnalite number NOT NULL,
+	PRIMARY KEY(joueur_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;7
 
 
-ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personne(pers_id);
+ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personnalite(pers_id);
 
-ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id);
+ALTER TABLE appartenir
+	ADD CONSTRAINT fk_appCateg FOREIGN KEY (app_categId) REFERENCES categorie(categ_id) ON DELETE SET NULL,
+	ADD CONSTRAINT fk_appFilm FOREIGN KEY (app_filmId) REFERENCES film(film_id) ON DELETE CASCADE;
 
-ALTER TABLE filmloue ADD CONSTRAINT fk_filmlFilm FOREIGN KEY (filml_idFilm) REFERENCES film(film_id);
-ALTER TABLE filmloue ADD CONSTRAINT fk_filmlUtil FOREIGN KEY (filml_idUtil) REFERENCES utilisateur(util_id);
+ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
 
-ALTER TABLE bandeannonce ADD CONSTRAINT fk_bdFilm FOREIGN KEY (bd_idFilm) REFERENCES film(film_id);
+ALTER TABLE filmloue
+	ADD CONSTRAINT fk_filmlFilm FOREIGN KEY (filml_idFilm) REFERENCES film(film_id),
+	ADD CONSTRAINT fk_filmlUtil FOREIGN KEY (filml_idUtil) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
 
-ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFERENCES film(film_id);
+ALTER TABLE bandeannonce ADD CONSTRAINT fk_bdFilm FOREIGN KEY (bd_idFilm) REFERENCES film(film_id) ON DELETE CASCADE;
 
-ALTER TABLE jouer ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id);
-ALTER TABLE jouer ADD CONSTRAINT fk_jouerPersonne FOREIGN KEY (jouer_idPersonne) REFERENCES personne(pers_id);
+ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFERENCES film(film_id) ON DELETE CASCADE;
+
+ALTER TABLE jouer
+	ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id) ON DELETE CASCADE,
+	ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
+
+
+
+
+
+
+
