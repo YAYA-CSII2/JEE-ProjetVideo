@@ -1,5 +1,5 @@
 CREATE TABLE utilisateur (
-	util_id number NOT NULL AUTO_INCREMENT,
+	util_id int NOT NULL AUTO_INCREMENT,
 	util_login VARCHAR(50) NOT NULL,
 	util_motdepasse VARCHAR(100) NOT NULL,
 	util_nom VARCHAR(50),
@@ -12,73 +12,74 @@ CREATE TABLE utilisateur (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE categorie (
-	categ_id number NOT NULL AUTO_INCREMENT,
+	categ_id int NOT NULL AUTO_INCREMENT,
 	categ_libelle VARCHAR(60) NOT NULL,
 	PRIMARY KEY(categ_id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE appartenir (
-	app_categId number NOT NULL,
-	app_filmId number NOT NULL,
+	app_categId int NOT NULL,
+	app_filmId int NOT NULL,
 	PRIMARY KEY(app_categId, app_filmId)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE film (
-	film_id number NOT NULL AUTO_INCREMENT,
+	film_id int NOT NULL AUTO_INCREMENT,
 	film_nom VARCHAR(50) NOT NULL,
+	film_lienAffiche VARCHAR(50) NOT NULL,
 	film_synopsis VARCHAR(255),
 	film_datedesortie DATE NOT NULL,
-	film_duree number NOT NULL,
+	film_duree int NOT NULL,
 	film_lienFilm VARCHAR(150),
 	film_anneedeproduction YEAR(4),
 	film_prixachat float,
 	film_prixlocation float,
-	film_idRealisateur number NOT NULL,
+	film_idRealisateur int NOT NULL,
 	PRIMARY KEY(film_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE cartevideoclub (
-	cvc_id number NOT NULL AUTO_INCREMENT,
-	cvc_pointfidelite number NOT NULL,
-	cvc_idPosseseur number NOT NULL,
+	cvc_id int NOT NULL AUTO_INCREMENT,
+	cvc_pointfidelite int NOT NULL,
+	cvc_idPosseseur int NOT NULL,
 	PRIMARY KEY(cvc_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --duree = 0  =>  film acheté
 CREATE TABLE filmloue (
-	filml_idFilm number NOT NULL,
+	filml_idFilm int NOT NULL,
 	filml_idUtil VARCHAR(50) NOT NULL,
 	filml_datelocation DATE NOT NULL,
-	filml_duree number NOT NULL,
+	filml_duree int NOT NULL,
 	PRIMARY KEY(filml_idFilm, filml_idUtil)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE noteFilm (
-	nfilm_idFilm number NOT NULL,
-	nfilm_idUtil number NOT NULL,
-	nfilm_note number,
+	nfilm_idFilm int NOT NULL,
+	nfilm_idUtil int NOT NULL,
+	nfilm_note int,
 	nfilm_commentaire VARCHAR(255),
 	PRIMARY KEY(nfilm_idFilm, nfilm_idUtil)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE bandeannonce (
-	bd_id number NOT NULL AUTO_INCREMENT,
+	bd_id int NOT NULL AUTO_INCREMENT,
 	bd_lienVideo VARCHAR(150) NOT NULL,
 	bd_description VARCHAR(255),
-	bd_idFilm number NOT NULL,
+	bd_idFilm int NOT NULL,
 	PRIMARY KEY(bd_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE photo (
-	photo_id number NOT NULL AUTO_INCREMENT,
+	photo_id int NOT NULL AUTO_INCREMENT,
 	photo_lienPhoto VARCHAR(150) NOT NULL,
 	photo_description VARCHAR(255),
-	photo_idFilm number NOT NULL,
+	photo_idFilm int NOT NULL,
 	PRIMARY KEY(photo_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE personnalite (
-	pers_id number NOT NULL AUTO_INCREMENT,
+	pers_id int NOT NULL AUTO_INCREMENT,
 	pers_nom VARCHAR(50) NOT NULL,
 	pers_prenom VARCHAR(50) NOT NULL,
 	pers_Datedenaissance DATE NOT NULL,
@@ -87,8 +88,8 @@ CREATE TABLE personnalite (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE jouer (
-	jouer_idFilm number NOT NULL,
-	jouer_idPersonnalite number NOT NULL,
+	jouer_idFilm int NOT NULL,
+	jouer_idPersonnalite int NOT NULL,
 	PRIMARY KEY(joueur_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;7
 
