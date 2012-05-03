@@ -11,6 +11,18 @@ CREATE TABLE utilisateur (
 	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE categorie (
+	categ_id number NOT NULL AUTO_INCREMENT,
+	categ_libelle VARCHAR(60) NOT NULL,
+	PRIMARY KEY(categ_id)
+);
+
+CREATE TABLE appartenir (
+	app_categId number NOT NULL,
+	app_filmId number NOT NULL,
+	PRIMARY KEY(app_categId, app_filmId)
+);
+
 CREATE TABLE film (
 	film_id number NOT NULL AUTO_INCREMENT,
 	film_nom VARCHAR(50) NOT NULL,
@@ -83,44 +95,23 @@ CREATE TABLE jouer (
 
 ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personnalite(pers_id);
 
-ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id);
+ALTER TABLE appartenir
+	ADD CONSTRAINT fk_appCateg FOREIGN KEY (app_categId) REFERENCES categorie(categ_id) ON DELETE SET NULL,
+	ADD CONSTRAINT fk_appFilm FOREIGN KEY (app_filmId) REFERENCES film(film_id) ON DELETE CASCADE;
 
-ALTER TABLE filmloue ADD CONSTRAINT fk_filmlFilm FOREIGN KEY (filml_idFilm) REFERENCES film(film_id);
-ALTER TABLE filmloue ADD CONSTRAINT fk_filmlUtil FOREIGN KEY (filml_idUtil) REFERENCES utilisateur(util_id);
+ALTER TABLE cartevideoclub ADD CONSTRAINT fk_cvcPossesseur FOREIGN KEY (cvc_idPosseseur) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
 
-ALTER TABLE bandeannonce ADD CONSTRAINT fk_bdFilm FOREIGN KEY (bd_idFilm) REFERENCES film(film_id);
+ALTER TABLE filmloue
+	ADD CONSTRAINT fk_filmlFilm FOREIGN KEY (filml_idFilm) REFERENCES film(film_id),
+	ADD CONSTRAINT fk_filmlUtil FOREIGN KEY (filml_idUtil) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
 
-ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFERENCES film(film_id);
+ALTER TABLE bandeannonce ADD CONSTRAINT fk_bdFilm FOREIGN KEY (bd_idFilm) REFERENCES film(film_id) ON DELETE CASCADE;
 
-ALTER TABLE jouer ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id);
-ALTER TABLE jouer ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
+ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFERENCES film(film_id) ON DELETE CASCADE;
 
-
-INSERT INTO utilisateur (util_login, util_motdepasse, util_nom, util_prenom, util_adresse,util_codepostale, util_pays, util_numerocartecredit)
-("util1", MD5("util1"), "Nom1", "Prenom1", "Adresse1", "20111", "FRANCE", NULL),
-("util2", MD5("util2"), "Nom2", "Prenom2", "Adresse2", "20119", "FRANCE", NULL),
-("util3", MD5("util3"), "Nom3", "Prenom3", "Adresse3", "20118", "FRANCE", NULL),
-("util4", MD5("util4"), "Nom4", "Prenom4", "Adresse4", "60111", "FRANCE", NULL),
-("util5", MD5("util5"), "Nom5", "Prenom5", "Adresse5", "60666", "FRANCE", NULL);
-
-
-INSERT INTO personnalite (pers_nom, pers_prenom, pers_Datedenaissance, pers_description) VALUES
-("Personnalite1", "Prenom1", "1960-03-09", NULL),
-("Personnalite2", "Prenom2", "1966-06-19", NULL),
-("Personnalite3", "Prenom3", "1970-01-21", NULL),
-("Personnalite4", "Prenom4", "1980-12-08", NULL),
-("Personnalite5", "Prenom5", "1962-04-19", NULL);
-	
-	
-INSERT INTO film (film_nom, film_synopsis, film_datedesortie, film_duree, film_lienFilm, film_anneedeproduction, film_prixachat, film_prixlocation, film_idRealisateur) VALUES
-("Film1", "Synopsis du film1", "2012-02-02", 215, "test1.avi", "2012", 20, 0.5, 1),
-("Film2", "Synopsis du film2", "2012-02-08", 215, "test2.avi", "2011", 15.99, 0.6, 2),
-("Film3", "Synopsis du film3", "2012-02-09", 200, "test3.avi", "2010", 10, 0.3, 1),
-("Film4", "Synopsis du film4", "2012-02-22", 180, "test4.avi", "2010", 12.20, 0.35, 2),
-("Film5", "Synopsis du film5", "2012-02-06", 255, "test5.avi", "2000", 12, 0.5, 3),
-("Film6", "Synopsis du film6", "2012-02-12", 300, "test6.avi", "2009", 12, 0.5, 2),
-("Film7", "Synopsis du film7", "2012-02-23", 300, "test7.avi", "2012", 20, 0.9, 1);
-
+ALTER TABLE jouer
+	ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id) ON DELETE CASCADE,
+	ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
 
 
 
