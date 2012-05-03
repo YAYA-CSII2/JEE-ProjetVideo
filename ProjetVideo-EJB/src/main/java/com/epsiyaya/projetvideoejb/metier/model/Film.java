@@ -39,10 +39,9 @@ public class Film {
       return duree;
    }
    
-   /** @param newDuree
-    * @pdOid 01d9e014-920b-44ca-b72e-f5cf4ec632b1 */
-   public void setDuree(int newDuree) {
-      duree = newDuree;
+   /** @pdOid 01d9e014-920b-44ca-b72e-f5cf4ec632b1 */
+   public void setDuree(int Duree) {
+      duree = Duree;
    }
    
    /** @pdOid e451d6ae-e4f4-407a-ac56-5b3c6958d698 */
@@ -50,10 +49,10 @@ public class Film {
       return reference;
    }
    
-   /** @param newReference
-    * @pdOid 8ffddd36-2a3f-4689-8f6d-f52b9fc850aa */
-   public void setReference(String newReference) {
-      reference = newReference;
+
+   /** @pdOid 8ffddd36-2a3f-4689-8f6d-f52b9fc850aa */
+   public void setReference(String Reference) {
+      reference = Reference;
    }
    
    /** @pdOid 41457181-171f-4878-afc4-c20fe1ab883a */
@@ -61,10 +60,10 @@ public class Film {
       return dateDeSortie;
    }
    
-   /** @param newDateDeSortie
-    * @pdOid bc9f4a63-462b-46e1-9789-c45fb3dc463c */
-   public void setDateDeSortie(Date newDateDeSortie) {
-      dateDeSortie = newDateDeSortie;
+
+   /** @pdOid bc9f4a63-462b-46e1-9789-c45fb3dc463c */
+   public void setDateDeSortie(Date DateDeSortie) {
+      dateDeSortie = DateDeSortie;
    }
    
    /** @pdOid c8329d13-f15c-44ae-95fb-a1e8af2b5464 */
@@ -72,10 +71,10 @@ public class Film {
       return lienFilm;
    }
    
-   /** @param newLienFilm
-    * @pdOid ea1bd844-e6bb-456b-b2da-de0f09d5ed6a */
-   public void setLienFilm(String newLienFilm) {
-      lienFilm = newLienFilm;
+
+   /** @pdOid ea1bd844-e6bb-456b-b2da-de0f09d5ed6a */
+   public void setLienFilm(String LienFilm) {
+      lienFilm = LienFilm;
    }
    
    /** @pdOid 63329f02-2e06-40b4-8690-c91094e71695 */
@@ -83,10 +82,10 @@ public class Film {
       return synopsis;
    }
    
-   /** @param newSynopsis
-    * @pdOid f4c95ef0-eb7c-4d7a-b948-3fa86c077a38 */
-   public void setSynopsis(String newSynopsis) {
-      synopsis = newSynopsis;
+   
+   /**@pdOid f4c95ef0-eb7c-4d7a-b948-3fa86c077a38 */
+   public void setSynopsis(String Synopsis) {
+      synopsis = Synopsis;
    }
    
    /** @pdOid 5b9f747b-80db-46b8-9819-676e5804dcf4 */
