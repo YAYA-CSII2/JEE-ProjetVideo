@@ -90,7 +90,7 @@ CREATE TABLE jouer (
 	jouer_idFilm int NOT NULL,
 	jouer_idPersonnalite int NOT NULL,
 	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;7
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personnalite(pers_id);
