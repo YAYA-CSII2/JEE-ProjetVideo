@@ -5,7 +5,7 @@ CREATE TABLE utilisateur (
 	util_nom VARCHAR(50),
 	util_prenom VARCHAR(50),
 	util_adresse VARCHAR(100),
-	util_codepostale CHAR(5),
+	util_codepostale VARCHAR(10),
 	util_pays VARCHAR(50),
 	util_numerocartecredit CHAR(16),
 	PRIMARY KEY(util_id)
@@ -40,6 +40,7 @@ CREATE TABLE film (
 
 CREATE TABLE cartevideoclub (
 	cvc_id int NOT NULL AUTO_INCREMENT,
+        cvc_numeroCarteFidel CHAR(10) NOT NULL,
 	cvc_pointfidelite int NOT NULL,
 	cvc_idPosseseur int NOT NULL,
 	PRIMARY KEY(cvc_id)

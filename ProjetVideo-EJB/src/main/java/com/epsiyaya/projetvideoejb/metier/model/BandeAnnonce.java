@@ -1,47 +1,28 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
-/***********************************************************************
- * Module:  BandeAnnonce.java
- * Author:  MisterGamer
- * Purpose: Defines the Class BandeAnnonce
- ***********************************************************************/
-
-import java.util.*;
-
-/** @pdOid 9de742e2-7549-4fec-b830-ba154100e0a2 */
 public class BandeAnnonce {
 
-   /** @pdOid 84e53a21-f840-469c-9948-ce22ef3eeda0 */
-   private String lienVideo;
-   /** @pdOid d665c55a-e331-4a86-b55e-ed2fe09c890a */
-   private String description;
-   
-   
-   /** @pdOid 1b64db30-e50d-4108-8ceb-a1f117bdd4d6 */
-   public String getLienVideo() {
-      return lienVideo;
-   }
-   
+    private String lienVideo;
+    private String description;
 
-   /** @pdOid 7f616872-aaca-47c2-8184-4228f0ef4b2c */
-   public void setLienVideo(String LienVideo) {
-      lienVideo = LienVideo;
-   }
-   
-   /** @pdOid b08ac774-649c-4fc0-bf8d-36587ece241d */
-   public String getDescription() {
-      return description;
-   }
-   
+    public BandeAnnonce(String link, String desc) {
+        lienVideo = link;
+        description = desc;
+    }
 
-   /** @pdOid 28af0821-e140-4de5-9956-c534d4b6d0c2 */
-   public void setDescription(String Description) {
-      description = Description;
-   }
-   
-   /** @pdOid 8f93960c-b50b-48d9-a4de-d19a497acb72 */
-   public BandeAnnonce() {
-      // TODO: implement
-   }
+    public String getLienVideo() {
+        return lienVideo;
+    }
 
+    public void setLienVideo(String LienVideo) {
+        lienVideo = LienVideo;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String Description) {
+        description = Description;
+    }
 }
