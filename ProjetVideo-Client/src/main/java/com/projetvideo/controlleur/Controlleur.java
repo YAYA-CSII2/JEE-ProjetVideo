@@ -47,7 +47,7 @@ public class Controlleur extends HttpServlet {
             IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
             
             
-            request.setAttribute("lesDoc", pannierSession.getPannier(1));
+            //request.setAttribute("lesDoc", pannierSession.getPannier(1));
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (NamingException ex) {
             Logger.getLogger(Controlleur.class.getName()).log(Level.SEVERE, null, ex);

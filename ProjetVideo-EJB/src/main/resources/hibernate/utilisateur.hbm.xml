@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="Utilisateur" table="utilisateur">
+        <id column="util_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+        </id>
+        
+        <property name="login" column="util_login" type="string" length="50" />
+        <property name="motDePasse" column="util_motdepasse" type="string" length="100" />
+        <property name="nom" column="util_nom" type="string" length="50" />
+        <property name="prenom" column="util_prenom" type="string" length="50" />
+        <property name="adresse" column="util_adresse" type="string" length="100" />
+        <property name="codePostale" column="util_codepostale" type="string" length="10" />
+        <property name="pays" column="util_pays" type="string" length="50" />
+        <property name="roleAdministrateur" column="util_isAdmin" type="boolean" />
+    </class>
+</hibernate-mapping>

@@ -25,7 +25,7 @@ public class PanierClient {
 
             IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
 
-            pannierSession.getPannier(cli_id);
+            /*pannierSession.getPannier(cli_id);
 
             pannierSession.addProduit(1, 9);
             pannierSession.addProduit(2, 6);
@@ -34,7 +34,9 @@ public class PanierClient {
             pannierSession.addProduit(1, 5);
             pannierSession.removeProduit(1, 5);
 
-            pannierSession.validerPanier();
+            pannierSession.validerPanier();*/
+            
+            pannierSession.test();
         } catch (NamingException nex) {
             nex.printStackTrace();
         }

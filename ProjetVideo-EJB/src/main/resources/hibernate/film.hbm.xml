@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="Film" table="film">
+        <id column="film_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+        </id>
+        
+        <property name="nom" column="film_nom" type="string" length="50" />
+        <property name="lienAffiche" column="film_lienAffiche" type="string" length="50" />
+        <property name="synopsis" column="film_synopsis" type="string" length="255" />
+        <property name="dateDeSortie" column="film_datedesortie" type="date" />
+        <property name="duree" column="film_duree" type="integer" />
+        <property name="lienFilm" column="film_lienFilm" type="string" length="150" />
+        <property name="anneeDeProduction" column="film_anneedeproduction" type="string" length="4" />
+        <property name="prixAchat" column="film_prixachat" type="float" />
+        <property name="prixLocationJour" column="film_prixlocation" type="float" />
+
+        <many-to-one name="realisateur" class="Personnalite" column="film_idRealisateur" cascade="save-update" />
+        
+        <set name="acteurs" table="jouer">
+            <key column="jouer_idFilm" />
+            <many-to-many  class="Personnalite" column="jouer_idPersonnalite" />
+        </set>
+    </class>
+</hibernate-mapping>

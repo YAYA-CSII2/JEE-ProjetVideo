@@ -3,7 +3,6 @@ package com.epsiyaya.projetvideoejb.metier.model;
 import java.util.ArrayList;
 
 public class Utilisateur {
-
     private String login;
     private String motDePasse;
     private String nom;
@@ -29,26 +28,14 @@ public class Utilisateur {
         roleAdministrateur = RoleAdministrateur;
     }
 
-    public boolean isAdministrateur() {
-        return roleAdministrateur;
-    }
-
-    public void setAdministrateur(Boolean RoleAdministrateur) {
-        roleAdministrateur = RoleAdministrateur;
-    }
-
-    public int getPontFidelite() {
-        return pointFidelite;
-    }
-
-    public void setPontFidelite(Integer _pointFidelite) {
-        pointFidelite = _pointFidelite;
-    }
-
     public String getLogin() {
         return login;
     }
 
+    public void setLogin(String log) {
+        login = log;
+    }
+        
     public String getMotDePasse() {
         return motDePasse;
     }
@@ -103,6 +90,22 @@ public class Utilisateur {
 
     public void setPays(String Pays) {
         pays = Pays;
+    }
+
+    public boolean getRoleAdministrateur() {
+        return roleAdministrateur;
+    }
+
+    public void setRoleAdministrateur(Boolean RoleAdministrateur) {
+        roleAdministrateur = RoleAdministrateur;
+    }
+
+    public int getPontFidelite() {
+        return pointFidelite;
+    }
+
+    public void setPontFidelite(Integer _pointFidelite) {
+        pointFidelite = _pointFidelite;
     }
 
     public ArrayList<FilmAchete> getFilmAchetes() {

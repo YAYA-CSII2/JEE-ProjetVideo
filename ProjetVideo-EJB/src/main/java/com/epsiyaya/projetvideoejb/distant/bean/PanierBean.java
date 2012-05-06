@@ -6,15 +6,54 @@ import java.util.Map;
 import java.util.HashMap;
 import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
 import com.epsiyaya.projetvideoejb.metier.dao.ProduitDAO;
-import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
+import com.epsiyaya.projetvideoejb.metier.model.Film;
+import com.epsiyaya.projetvideoejb.metier.model.Personnalite;
+import com.epsiyaya.projetvideoejb.metier.model.Utilisateur;
 import javax.ejb.Stateful;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import org.hibernate.Session;
+
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.joda.time.DateTime;
 
 @Stateful
 public class PanierBean implements IPannierSession {
-
-    ProduitDAO pdao = new ProduitDAO();
+    
+    @Override
+    public void test() {
+        Configuration cfg = new Configuration();
+        SessionFactory factory = cfg.configure().buildSessionFactory();
+        
+        //Utilisateur t = new Utilisateur("login", "mdp", "nom", "prenom", "adresse", "codepostal", "pays", true);
+        DateTime d = new DateTime();
+        
+        Personnalite perso = new Personnalite("nomPersonnalite", "prenomPersonnalite", d, "Description du mec");
+        Personnalite perso2 = new Personnalite("nomPersonnalite2", "prenomPersonnalite2", d, "Description du mec2");
+        Film f = new Film("NomDuFilm", "LienDuFilm", "Synopsis du film", 200, d, "2012", (float)20.2, (float)3.5, "leinAfficher", perso);
+        f.addActeur(perso);
+        f.addActeur(perso2);
+        
+        Session session = factory.openSession();
+        session.save(perso);
+        session.save(perso2);
+        session.save(f);
+        session.flush();
+        
+        for (Object o: f.getActeurs()) {
+            Personnalite p = (Personnalite)o;
+            System.out.println(p.getNom());
+        }
+        
+        session.delete(f);
+        session.flush();
+    }
+    
+    
+    
+    /*ProduitDAO pdao = new ProduitDAO();
     Map<Integer, ElementPanier> panier = new HashMap<Integer, ElementPanier>();
     int clientId;
 
@@ -61,5 +100,6 @@ public class PanierBean implements IPannierSession {
         for (ElementPanier ep : panier.values()) {
             pdao.addToPanier(ds, ep, clientId);
         }
-    }
+    }*/
+
 }

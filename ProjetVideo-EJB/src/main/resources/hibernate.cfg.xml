@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.datasource">
+            J2EProjetVideo
+        </property>
+        <property name="dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <mapping resource="hibernate/utilisateur.hbm.xml" />
+        <mapping resource="hibernate/film.hbm.xml" />
+        <mapping resource="hibernate/personnalite.hbm.xml" />
+        
+    </session-factory>
+</hibernate-configuration>

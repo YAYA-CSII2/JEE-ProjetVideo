@@ -4,18 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.sql.DataSource;
-
-import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
-import com.epsiyaya.projetvideoejb.metier.model.ElementPanier;
-import com.epsiyaya.projetvideoejb.metier.model.Produit;
-import com.epsiyaya.projetvideoejb.metier.model.Produit;
 import java.sql.*;
 
 public class ProduitDAO {
 	
-	Connection conn = null;
+	/*Connection conn = null;
 	
 	public Produit getProduit(DataSource ds, int idProduit) {
 		// pr�paration des ressources utilis�es
@@ -233,5 +227,5 @@ public class ProduitDAO {
 				System.out.println("exception lors de la fermeture des ressources:"+e.getMessage());
 			}
 		}
-	}
+	}*/
 }
