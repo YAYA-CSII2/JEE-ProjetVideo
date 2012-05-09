@@ -9,6 +9,7 @@ import com.epsiyaya.projetvideoejb.metier.dao.ProduitDAO;
 import com.epsiyaya.projetvideoejb.metier.model.Film;
 import com.epsiyaya.projetvideoejb.metier.model.Personnalite;
 import com.epsiyaya.projetvideoejb.metier.model.Utilisateur;
+import com.epsiyaya.projetvideoejb.util.HibernateUtil;
 import javax.ejb.Stateful;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -24,8 +25,8 @@ public class PanierBean implements IPannierSession {
     
     @Override
     public void test() {
-        Configuration cfg = new Configuration();
-        SessionFactory factory = cfg.configure().buildSessionFactory();
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        
         
         //Utilisateur t = new Utilisateur("login", "mdp", "nom", "prenom", "adresse", "codepostal", "pays", true);
         DateTime d = new DateTime();
@@ -35,6 +36,8 @@ public class PanierBean implements IPannierSession {
         Film f = new Film("NomDuFilm", "LienDuFilm", "Synopsis du film", 200, d, "2012", (float)20.2, (float)3.5, "leinAfficher", perso);
         f.addActeur(perso);
         f.addActeur(perso2);
+        
+        
         
         Session session = factory.openSession();
         session.save(perso);

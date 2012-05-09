@@ -4,7 +4,7 @@
      "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
     <class name="Personnalite" table="personnalite">
-        <id column="pers_id" type="integer" unsaved-value="null">
+        <id name="id" column="pers_id" type="integer" unsaved-value="null">
             <generator class="native" />
         </id>
         
