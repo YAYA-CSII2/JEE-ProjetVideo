@@ -1,14 +1,14 @@
-drop table utilisateur
-drop table categorie
-drop table appartenir
-drop table film
-drop table cartevideoclub
-drop table filmloue
-drop table noteFilm
-drop table bandeannonce
-drop table photo
-drop table jouer
-drop table personnalite
+drop table utilisateur;
+drop table categorie;
+drop table appartenir;
+drop table film;
+drop table cartevideoclub;
+drop table filmloue;
+drop table noteFilm;
+drop table bandeannonce;
+drop table photo;
+drop table jouer;
+drop table personnalite;
 
 CREATE TABLE utilisateur (
 	util_id int NOT NULL AUTO_INCREMENT,
