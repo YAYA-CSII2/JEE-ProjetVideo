@@ -1,32 +1,17 @@
 package com.epsiyaya.projetvideoejb.metier.dao;
 
 import com.epsiyaya.projetvideoejb.metier.model.Personnalite;
-import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
 
-public class PersonnaliteDAO {
-
-    private SessionFactory session;
+public class PersonnaliteDAO extends BaseHibernateDAO {
 
     public PersonnaliteDAO() {
     }
-    
-    private SessionFactory getSessionFactory() {
-        return session;
+
+    public void saveOrUpdate(Personnalite perso) {
+        super.getSessionFactory().saveOrUpdate(perso);
     }
 
-    public void setSessionFactory(SessionFactory sf) {
-        session = sf;
+    public void deletePerso(Personnalite perso) {
+        super.getSessionFactory().delete(perso);
     }
-
-    public Personnalite saveIt(Personnalite perso) {
-        Session s = session.getCurrentSession();
-        s.save(perso);
-        return perso;
-    }
-
-    /*public Personnalite getById(Integer id) {
-        Personnalite perso = (Personnalite) session.get(Personnalite.class, id);
-        return perso;
-    }*/
 }

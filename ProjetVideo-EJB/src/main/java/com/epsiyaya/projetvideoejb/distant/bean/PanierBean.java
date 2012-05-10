@@ -1,23 +1,13 @@
 package com.epsiyaya.projetvideoejb.distant.bean;
 
-import javax.annotation.Resource;
-import javax.sql.DataSource;
-import java.util.Map;
-import java.util.HashMap;
 import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
-import com.epsiyaya.projetvideoejb.metier.dao.ProduitDAO;
+import com.epsiyaya.projetvideoejb.metier.dao.FilmDAO;
+import com.epsiyaya.projetvideoejb.metier.dao.PersonnaliteDAO;
 import com.epsiyaya.projetvideoejb.metier.model.Film;
 import com.epsiyaya.projetvideoejb.metier.model.Personnalite;
 import com.epsiyaya.projetvideoejb.metier.model.Utilisateur;
 import com.epsiyaya.projetvideoejb.util.HibernateUtil;
 import javax.ejb.Stateful;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import org.hibernate.Session;
-
-
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.joda.time.DateTime;
 
 @Stateful
@@ -25,10 +15,13 @@ public class PanierBean implements IPannierSession {
     
     @Override
     public void test() {
-        SessionFactory factory = HibernateUtil.getSessionFactory();
+        PersonnaliteDAO personnaliteDAO = new PersonnaliteDAO();
+        personnaliteDAO.setSessionFactory(HibernateUtil.getSessionFactory());
+        FilmDAO filmDAO = new FilmDAO();
+        filmDAO.setSessionFactory(HibernateUtil.getSessionFactory());
         
         
-        //Utilisateur t = new Utilisateur("login", "mdp", "nom", "prenom", "adresse", "codepostal", "pays", true);
+        //Utilisateur user = new Utilisateur("login", "mdp", "nom", "prenom", "adresse", "codepostal", "pays", true);
         DateTime d = new DateTime();
         
         Personnalite perso = new Personnalite("nomPersonnalite", "prenomPersonnalite", d, "Description du mec");
@@ -38,22 +31,22 @@ public class PanierBean implements IPannierSession {
         f.addActeur(perso2);
         
         
+        personnaliteDAO.saveOrUpdate(perso);
+        personnaliteDAO.saveOrUpdate(perso2);
+        filmDAO.saveOrUpdate(f);
         
-        Session session = factory.openSession();
-        session.save(perso);
-        session.save(perso2);
-        session.save(f);
-        session.flush();
+        
+        HibernateUtil.flushSession();
         
         for (Object o: f.getActeurs()) {
             Personnalite p = (Personnalite)o;
             System.out.println(p.getNom());
         }
         
-        session.delete(f);
-        session.delete(perso);
-        session.delete(perso2);
-        session.flush();
+        filmDAO.deleteFilm(f);
+        personnaliteDAO.deletePerso(perso);
+        personnaliteDAO.deletePerso(perso2);
+        HibernateUtil.flushSession();
     }
     
     

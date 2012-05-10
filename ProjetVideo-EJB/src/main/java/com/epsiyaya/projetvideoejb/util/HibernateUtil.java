@@ -1,24 +1,31 @@
 package com.epsiyaya.projetvideoejb.util;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-    private static final SessionFactory sessionFactory = buildSessionFactory();
+    private static final Session session = buildSessionFactory();
 
     private HibernateUtil() {
     }
 
-    private static SessionFactory buildSessionFactory() {
+    private static Session buildSessionFactory() {
         HibernateUtil hibernateUtil = new HibernateUtil();
         Configuration config = new Configuration();
 
-        return new Configuration().configure().buildSessionFactory();
+        SessionFactory sf = config.configure().buildSessionFactory();
+
+        return sf.openSession();
     }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+    public static Session getSessionFactory() {
+        return session;
+    }
+
+    public static void flushSession() {
+        session.flush();
     }
 }
