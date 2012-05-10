@@ -51,6 +51,8 @@ public class PanierBean implements IPannierSession {
         }
         
         session.delete(f);
+        session.delete(perso);
+        session.delete(perso2);
         session.flush();
     }
     
