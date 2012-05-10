@@ -1,4 +1,16 @@
-CREATE OR REPLACE TABLE utilisateur (
+drop table utilisateur
+drop table categorie
+drop table appartenir
+drop table film
+drop table cartevideoclub
+drop table filmloue
+drop table noteFilm
+drop table bandeannonce
+drop table photo
+drop table jouer
+drop table personnalite
+
+CREATE TABLE utilisateur (
 	util_id int NOT NULL AUTO_INCREMENT,
 	util_login VARCHAR(50) NOT NULL,
 	util_motdepasse VARCHAR(100) NOT NULL,
@@ -8,22 +20,23 @@ CREATE OR REPLACE TABLE utilisateur (
 	util_codepostale VARCHAR(10),
 	util_pays VARCHAR(50),
 	util_numerocartecredit CHAR(16),
+        util_admin boolean;
 	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE categorie (
+CREATE TABLE categorie (
 	categ_id int NOT NULL AUTO_INCREMENT,
 	categ_libelle VARCHAR(60) NOT NULL,
 	PRIMARY KEY(categ_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE appartenir (
+CREATE TABLE appartenir (
 	app_categId int NOT NULL,
 	app_filmId int NOT NULL,
 	PRIMARY KEY(app_categId, app_filmId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE film (
+CREATE TABLE film (
 	film_id int NOT NULL AUTO_INCREMENT,
 	film_nom VARCHAR(50) NOT NULL,
 	film_lienAffiche VARCHAR(50) NOT NULL,
@@ -38,7 +51,7 @@ CREATE OR REPLACE TABLE film (
 	PRIMARY KEY(film_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE cartevideoclub (
+CREATE TABLE cartevideoclub (
 	cvc_id int NOT NULL AUTO_INCREMENT,
         cvc_numeroCarteFidel CHAR(10) NOT NULL,
 	cvc_pointfidelite int NOT NULL,
@@ -46,7 +59,7 @@ CREATE OR REPLACE TABLE cartevideoclub (
 	PRIMARY KEY(cvc_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE filmloue (
+CREATE TABLE filmloue (
 	filml_idFilm int NOT NULL,
 	filml_idUtil int NOT NULL,
 	filml_datelocation DATE NOT NULL,
@@ -54,7 +67,7 @@ CREATE OR REPLACE TABLE filmloue (
 	PRIMARY KEY(filml_idFilm, filml_idUtil, filml_datelocation)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE noteFilm (
+CREATE TABLE noteFilm (
 	nfilm_idFilm int NOT NULL,
 	nfilm_idUtil int NOT NULL,
 	nfilm_note int,
@@ -62,7 +75,7 @@ CREATE OR REPLACE TABLE noteFilm (
 	PRIMARY KEY(nfilm_idFilm, nfilm_idUtil)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE bandeannonce (
+CREATE TABLE bandeannonce (
 	bd_id int NOT NULL AUTO_INCREMENT,
 	bd_lienVideo VARCHAR(150) NOT NULL,
 	bd_description VARCHAR(255),
@@ -70,7 +83,7 @@ CREATE OR REPLACE TABLE bandeannonce (
 	PRIMARY KEY(bd_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE photo (
+CREATE TABLE photo (
 	photo_id int NOT NULL AUTO_INCREMENT,
 	photo_lienPhoto VARCHAR(150) NOT NULL,
 	photo_description VARCHAR(255),
@@ -78,7 +91,7 @@ CREATE OR REPLACE TABLE photo (
 	PRIMARY KEY(photo_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE personnalite (
+CREATE TABLE personnalite (
 	pers_id int NOT NULL AUTO_INCREMENT,
 	pers_nom VARCHAR(50) NOT NULL,
 	pers_prenom VARCHAR(50) NOT NULL,
@@ -87,7 +100,7 @@ CREATE OR REPLACE TABLE personnalite (
 	PRIMARY KEY(pers_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE OR REPLACE TABLE jouer (
+CREATE TABLE jouer (
 	jouer_idFilm int NOT NULL,
 	jouer_idPersonnalite int NOT NULL,
 	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
@@ -113,4 +126,3 @@ ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFEREN
 ALTER TABLE jouer
 	ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id) ON DELETE CASCADE,
 	ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
-
