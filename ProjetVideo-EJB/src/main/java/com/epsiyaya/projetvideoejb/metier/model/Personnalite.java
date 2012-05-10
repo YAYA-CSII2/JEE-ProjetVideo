@@ -15,11 +15,9 @@ public class Personnalite {
     private String description;
     private Set<Film> filmJouer = new HashSet<Film>();
 
-    public Personnalite(String name, String surname, DateTime dateNaiss, String desc) {
-        nom = name;
-        prenom = surname;
-        dateDeNaissance = dateNaiss;
-        description = desc;
+    
+    public Personnalite() {
+        
     }
 
     public Integer getId() {
