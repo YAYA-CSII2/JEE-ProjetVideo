@@ -19,6 +19,13 @@ public class Personnalite {
     public Personnalite() {
         
     }
+    
+    public Personnalite(String nomPersonnalite, String prenomPersonnalite, DateTime d, String desc) {
+        nom = nomPersonnalite;
+        prenom = prenomPersonnalite;
+        dateDeNaissance = d;
+        description = desc;
+    }
 
     public Integer getId() {
         return id;
