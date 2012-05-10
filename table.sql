@@ -1,14 +1,14 @@
-drop table utilisateur;
-drop table categorie;
-drop table appartenir;
-drop table film;
-drop table cartevideoclub;
-drop table filmloue;
-drop table noteFilm;
-drop table bandeannonce;
-drop table photo;
-drop table jouer;
-drop table personnalite;
+drop table IF EXISTS utilisateur;
+drop table IF EXISTS categorie;
+drop table IF EXISTS appartenir;
+drop table IF EXISTS film;
+drop table IF EXISTS cartevideoclub;
+drop table IF EXISTS filmloue;
+drop table IF EXISTS noteFilm;
+drop table IF EXISTS bandeannonce;
+drop table IF EXISTS photo;
+drop table IF EXISTS jouer;
+drop table IF EXISTS personnalite;
 
 CREATE TABLE utilisateur (
 	util_id int NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ CREATE TABLE utilisateur (
 	util_codepostale VARCHAR(10),
 	util_pays VARCHAR(50),
 	util_numerocartecredit CHAR(16),
-        util_admin boolean;
+        util_admin boolean,
 	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
