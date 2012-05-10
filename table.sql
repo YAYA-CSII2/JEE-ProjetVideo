@@ -1,14 +1,36 @@
-drop table IF EXISTS utilisateur;
-drop table IF EXISTS categorie;
-drop table IF EXISTS appartenir;
-drop table IF EXISTS film;
-drop table IF EXISTS cartevideoclub;
-drop table IF EXISTS filmloue;
-drop table IF EXISTS noteFilm;
-drop table IF EXISTS bandeannonce;
-drop table IF EXISTS photo;
-drop table IF EXISTS jouer;
-drop table IF EXISTS personnalite;
+ALTER TABLE film DROP FOREIGN KEY fk_filmRealisateur;
+
+ALTER TABLE appartenir
+	DROP FOREIGN KEY fk_appCateg,
+	DROP FOREIGN KEY fk_appFilm;
+
+ALTER TABLE cartevideoclub DROP FOREIGN KEY fk_cvcPossesseur;
+
+ALTER TABLE filmloue
+	DROP FOREIGN KEY fk_filmlFilm,
+	DROP FOREIGN KEY fk_filmlUtil;
+
+ALTER TABLE bandeannonce DROP FOREIGN KEY fk_bdFilm;
+
+ALTER TABLE photo DROP FOREIGN KEY fk_photoFilm;
+
+ALTER TABLE jouer
+	DROP FOREIGN KEY fk_jouerFilm,
+	DROP FOREIGN KEY fk_jouerPersonnalite;
+
+
+
+drop table IF EXISTS utilisateur CASCADE;
+drop table IF EXISTS categorie CASCADE;
+drop table IF EXISTS appartenir CASCADE;
+drop table IF EXISTS film CASCADE;
+drop table IF EXISTS cartevideoclub CASCADE;
+drop table IF EXISTS filmloue CASCADE;
+drop table IF EXISTS noteFilm CASCADE;
+drop table IF EXISTS bandeannonce CASCADE;
+drop table IF EXISTS photo CASCADE;
+drop table IF EXISTS jouer CASCADE;
+drop table IF EXISTS personnalite CASCADE;
 
 CREATE TABLE utilisateur (
 	util_id int NOT NULL AUTO_INCREMENT,
@@ -31,7 +53,7 @@ CREATE TABLE categorie (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE appartenir (
-        app_id int NOT NULL AUTO_INCREMENT
+        app_id int NOT NULL AUTO_INCREMENT,
 	app_categId int NOT NULL,
 	app_filmId int NOT NULL,
 	PRIMARY KEY(app_id)
@@ -104,10 +126,9 @@ CREATE TABLE personnalite (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE jouer (
-        jouer_id int NOT NULL AUTO_INCREMENT
 	jouer_idFilm int NOT NULL,
 	jouer_idPersonnalite int NOT NULL,
-	PRIMARY KEY(jouer_id)
+	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
