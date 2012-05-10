@@ -126,10 +126,9 @@ CREATE TABLE personnalite (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE jouer (
-        jouer_id int NOT NULL AUTO_INCREMENT,
 	jouer_idFilm int NOT NULL,
 	jouer_idPersonnalite int NOT NULL,
-	PRIMARY KEY(jouer_id)
+	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
