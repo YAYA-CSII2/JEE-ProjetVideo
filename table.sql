@@ -1,3 +1,7 @@
+ALTER TABLE filmAchete
+	DROP FOREIGN KEY fk_filmAFilm,
+	DROP FOREIGN KEY fk_filmAUtil;
+
 ALTER TABLE noteFilm DROP FOREIGN KEY fk_NtFilmFilm;
 ALTER TABLE noteFilm DROP FOREIGN KEY fk_NtFilmUtil;
 
@@ -22,7 +26,7 @@ ALTER TABLE jouer
 	DROP FOREIGN KEY fk_jouerPersonnalite;
 
 
-
+drop table IF EXISTS filmAchete CASCADE;
 drop table IF EXISTS utilisateur CASCADE;
 drop table IF EXISTS categorie CASCADE;
 drop table IF EXISTS appartenir CASCADE;
@@ -134,6 +138,14 @@ CREATE TABLE jouer (
 	PRIMARY KEY(jouer_idFilm, jouer_idPersonnalite)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+create table filmAchete(
+        filmA_id int NOT NULL AUTO_INCREMENT,
+	filmA_idFilm int NOT NULL,
+	filmA_idUtil int NOT NULL,
+	filmA_dateAchat DATE NOT NULL,
+        primary key(filmA_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 ALTER TABLE film ADD CONSTRAINT fk_filmRealisateur FOREIGN KEY (film_idRealisateur) REFERENCES personnalite(pers_id);
 
@@ -158,4 +170,8 @@ ALTER TABLE jouer
 ALTER TABLE noteFilm
         ADD CONSTRAINT fk_NtFilmFilm Foreign KEY(nfilm_idFilm) References film(film_id) on delete cascade,
         ADD CONSTRAINT fk_NtFilmUtil Foreign KEY(nfilm_idUtil) References utilisateur(util_id) on delete cascade;
+
+ALTER TABLE filmAchete
+	ADD CONSTRAINT fk_filmAFilm FOREIGN KEY (filmA_idFilm) REFERENCES film(film_id),
+	ADD CONSTRAINT fk_filmAUtil FOREIGN KEY (filmA_idUtil) REFERENCES utilisateur(util_id) ON DELETE CASCADE;
 
