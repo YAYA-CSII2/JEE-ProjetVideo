@@ -19,10 +19,10 @@ public class Film {
     private Float prixLocationJour;
     private Personnalite realisateur;
     private Set<Personnalite> acteurs = new HashSet<Personnalite>();
-    private ArrayList<BandeAnnonce> bandeAnnonces = new ArrayList<BandeAnnonce>();
-    private ArrayList<Photo> photos = new ArrayList<Photo>();
-    private ArrayList<Categorie> categorie = new ArrayList<Categorie>();
-    private ArrayList<NoteFilm> notesDuFilm = new ArrayList<NoteFilm>();
+    private Set<BandeAnnonce> bandeAnnonces = new HashSet<BandeAnnonce>();
+    private Set<Photo> photos = new HashSet<Photo>();
+    private Set<Categorie> categorie = new HashSet<Categorie>();
+    private Set<NoteFilm> notesDuFilm = new HashSet<NoteFilm>();
 
     public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real) {
         nom = Nom;
@@ -37,7 +37,7 @@ public class Film {
         realisateur = real;
     }
 
-    public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real, Set actors, ArrayList<BandeAnnonce> BandeAnnonces, ArrayList<Photo> Photos, ArrayList<NoteFilm> notes) {
+    public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real, Set actors, HashSet<BandeAnnonce> BandeAnnonces, HashSet<Photo> Photos, HashSet<NoteFilm> notes) {
         nom = Nom;
         lienFilm = LienFilm;
         synopsis = Synopsis;
@@ -110,11 +110,11 @@ public class Film {
         nom = newNom;
     }
 
-    public ArrayList getBandeDannoce() {
+    public Set getBandeDannoce() {
         return bandeAnnonces;
     }
 
-    public void setBandeDannoce(ArrayList bandeDannoce) {
+    public void setBandeDannoce(HashSet bandeDannoce) {
         this.bandeAnnonces = bandeDannoce;
     }
 
@@ -142,27 +142,27 @@ public class Film {
         lienAffiche = linkAffiche;
     }
 
-    public ArrayList<BandeAnnonce> getBandeAnnonces() {
+    public Set<BandeAnnonce> getBandeAnnonces() {
         return bandeAnnonces;
     }
 
-    public void setBandeAnnonces(ArrayList<BandeAnnonce> bandeAnnonces) {
+    public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
         this.bandeAnnonces = bandeAnnonces;
     }
 
-    public ArrayList<Categorie> getCategorie() {
+    public Set<Categorie> getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(ArrayList<Categorie> categorie) {
+    public void setCategorie(HashSet<Categorie> categorie) {
         this.categorie = categorie;
     }
 
-    public ArrayList<Photo> getPhotos() {
+    public Set<Photo> getPhotos() {
         return photos;
     }
 
-    public void setPhotos(ArrayList<Photo> photos) {
+    public void setPhotos(HashSet<Photo> photos) {
         this.photos = photos;
     }
 
@@ -202,11 +202,11 @@ public class Film {
         realisateur = real;
     }
 
-    public ArrayList<NoteFilm> getNotesDuFilm() {
+    public Set<NoteFilm> getNotesDuFilm() {
         return notesDuFilm;
     }
 
-    public void setNoteDuFilm(ArrayList<NoteFilm> notes) {
+    public void setNoteDuFilm(HashSet<NoteFilm> notes) {
         notesDuFilm = notes;
     }
 }

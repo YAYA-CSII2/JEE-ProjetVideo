@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="FilmLoue" table="filmloue">
+        
+       <id column="filml_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+        </id>
+        
+        <property name="dateLocation" column="filml_datelocation" type="date" unsaved-value="null"/>
+        <property name="duree" column="filml_duree" type="integer" unsaved-value="null"/>
+        
+        <many-to-one name="monFilmLoue" class="Film" column="filml_idFilm" cascade="save-update" />
+    </class>
+</hibernate-mapping>

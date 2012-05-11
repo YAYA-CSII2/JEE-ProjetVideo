@@ -24,5 +24,25 @@
             <key column="jouer_idFilm" />
             <many-to-many  class="Personnalite" column="jouer_idPersonnalite" />
         </set>
+        
+        <set name="bandeAnnonces" table="bandeannonce">
+            <key column="bd_idFilm" />
+            <one-to-many  class="BandeAnnonce"/>
+        </set>
+        
+        <set name="photos" table="photo">
+            <key column="photo_idFilm" />
+            <one-to-many  class="Photo"/>
+        </set>
+        
+        <set name="categorie" table="appartenir">
+            <key column="app_filmId" />
+            <many-to-many  class="Categorie" column="app_categId"/>
+        </set>
+        
+         <set name="notesDuFilm" table="noteFilm">
+            <key column="nfilm_idFilm" />
+            <one-to-many  class="NoteFilm"/>
+        </set>
     </class>
 </hibernate-mapping>

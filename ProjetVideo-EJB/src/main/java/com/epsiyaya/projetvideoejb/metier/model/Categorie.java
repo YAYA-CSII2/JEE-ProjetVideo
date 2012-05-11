@@ -1,13 +1,23 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Categorie {
 
     private String nom;
-    private String description;
-
-    public Categorie(String Nom, String Description) {
+    private Set<Film> mesFilms = new HashSet<Film>();
+    
+    public Categorie(String Nom) {
         nom = Nom;
-        description = Description;
+    }
+    
+    public Set<Film> getMesFilms() {
+        return mesFilms;
+    }
+
+    public void setMesFilms(Set<Film> mesFilms) {
+        this.mesFilms = mesFilms;
     }
 
     public String getNom() {
@@ -18,11 +28,4 @@ public class Categorie {
         nom = newNom;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String newDescription) {
-        description = newDescription;
-    }
 }

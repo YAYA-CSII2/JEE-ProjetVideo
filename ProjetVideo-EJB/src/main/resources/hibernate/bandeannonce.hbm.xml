@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="BandeAnnonce" table="bandeannonce">
+        <id column="bd_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+        </id>
+        
+        <property name="lienVideo" column="film_nom" type="string" length="50" unsaved-value="null"/>
+        <property name="description" column="film_lienAffiche" type="string" length="50" />
+        
+
+        <many-to-one name="monFilm" class="Film" column="bd_idFilm" cascade="save-update" />
+        
+        
+    </class>
+</hibernate-mapping>

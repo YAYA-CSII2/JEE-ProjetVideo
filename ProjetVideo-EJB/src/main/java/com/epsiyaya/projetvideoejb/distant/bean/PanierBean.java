@@ -35,7 +35,7 @@ public class PanierBean implements IPannierSession {
         personnaliteDAO.saveOrUpdate(perso2);
         filmDAO.saveOrUpdate(f);
         
-        
+        //Effectuer toutes les requetes précédentes sur la BDD
         HibernateUtil.flushSession();
         
         for (Object o: f.getActeurs()) {

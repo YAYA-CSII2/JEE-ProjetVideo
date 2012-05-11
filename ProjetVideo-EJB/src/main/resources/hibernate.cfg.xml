@@ -12,6 +12,7 @@
         <mapping resource="hibernate/utilisateur.hbm.xml" />
         <mapping resource="hibernate/film.hbm.xml" />
         <mapping resource="hibernate/personnalite.hbm.xml" />
+        <mapping resource="hibernate/filmloue.hbm.xml" />
         
     </session-factory>
 </hibernate-configuration>
