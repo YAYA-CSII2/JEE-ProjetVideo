@@ -10,7 +10,7 @@ public class NoteFilmDAO extends BaseHibernateDAO {
     public void saveOrUpdate(NoteFilm noteFilm) {
         super.getSessionFactory().saveOrUpdate(noteFilm);
     }
-        public void deleteUtilisateur(NoteFilm noteFilm) {
+        public void deleteNoteFilm(NoteFilm noteFilm) {
         super.getSessionFactory().delete(noteFilm);
     }
 }

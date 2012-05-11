@@ -10,7 +10,7 @@ public class FilmAcheteDAO extends BaseHibernateDAO {
     public void saveOrUpdate(FilmAcheteDAO FilmAchete) {
         super.getSessionFactory().saveOrUpdate(FilmAchete);
     }
-        public void deleteUtilisateur(FilmAcheteDAO FilmAchete) {
+        public void deleteFilmAchete(FilmAcheteDAO FilmAchete) {
         super.getSessionFactory().delete(FilmAchete);
     }
 }

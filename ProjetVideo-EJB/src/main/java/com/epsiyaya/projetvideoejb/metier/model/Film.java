@@ -110,14 +110,6 @@ public class Film {
         nom = newNom;
     }
 
-    public Set getBandeDannoce() {
-        return bandeAnnonces;
-    }
-
-    public void setBandeDannoce(HashSet bandeDannoce) {
-        this.bandeAnnonces = bandeDannoce;
-    }
-
     public Float getPrixAchat() {
         return prixAchat;
     }

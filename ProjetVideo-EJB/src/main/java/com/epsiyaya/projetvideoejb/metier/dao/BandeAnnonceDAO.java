@@ -11,7 +11,7 @@ public class BandeAnnonceDAO extends BaseHibernateDAO {
         super.getSessionFactory().saveOrUpdate(bandeAnnonce);
     }
         
-    public void deleteUtilisateur(BandeAnnonce bandeAnnonce) {
+    public void deleteBandeAnnonce(BandeAnnonce bandeAnnonce) {
         super.getSessionFactory().delete(bandeAnnonce);
     }
 

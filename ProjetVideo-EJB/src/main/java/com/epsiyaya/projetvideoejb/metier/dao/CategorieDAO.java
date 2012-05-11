@@ -7,11 +7,11 @@ public class CategorieDAO extends BaseHibernateDAO {
     public CategorieDAO() {
     }
 
-    public void saveOrUpdate(CategorieDAO categorie) {
+    public void saveOrUpdate(Categorie categorie) {
         super.getSessionFactory().saveOrUpdate(categorie);
     }
         
-    public void deleteUtilisateur(CategorieDAO categorie) {
+    public void deleteCategorie(Categorie categorie) {
         super.getSessionFactory().delete(categorie);
     }
 

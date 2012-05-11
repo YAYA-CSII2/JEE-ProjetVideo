@@ -11,7 +11,7 @@ public class PhotoDAO extends BaseHibernateDAO {
         super.getSessionFactory().saveOrUpdate(photo);
     }
 
-    public void deletePerso(Photo photo) {
+    public void deletePhoto(Photo photo) {
         super.getSessionFactory().delete(photo);
     }
 }
