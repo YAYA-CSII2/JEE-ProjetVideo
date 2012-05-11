@@ -1,3 +1,6 @@
+ALTER TABLE noteFilm DROP FOREIGN KEY fk_NtFilmFilm;
+ALTER TABLE noteFilm DROP FOREIGN KEY fk_NtFilmUtil;
+
 ALTER TABLE film DROP FOREIGN KEY fk_filmRealisateur;
 
 ALTER TABLE appartenir
@@ -42,7 +45,7 @@ CREATE TABLE utilisateur (
 	util_codepostale VARCHAR(10),
 	util_pays VARCHAR(50),
 	util_numerocartecredit CHAR(16),
-        util_admin boolean,
+        util_admin boolean NOT NULL DEFAULT false,
 	PRIMARY KEY(util_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -151,3 +154,8 @@ ALTER TABLE photo ADD CONSTRAINT fk_photoFilm FOREIGN KEY (photo_idFilm) REFEREN
 ALTER TABLE jouer
 	ADD CONSTRAINT fk_jouerFilm FOREIGN KEY (jouer_idFilm) REFERENCES film(film_id) ON DELETE CASCADE,
 	ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
+
+ALTER TABLE noteFilm
+        ADD CONSTRAINT fk_NtFilmFilm Foreign KEY(nfilm_idFilm) References film(film_id) on cascade,
+        ADD CONSTRAINT fk_NtFilmUtil Foreign KEY(nfilm_idUtil) References utilisateur(util_id) on cascade;
+
