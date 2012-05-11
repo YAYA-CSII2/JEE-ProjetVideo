@@ -156,6 +156,6 @@ ALTER TABLE jouer
 	ADD CONSTRAINT fk_jouerPersonnalite FOREIGN KEY (jouer_idPersonnalite) REFERENCES personnalite(pers_id);
 
 ALTER TABLE noteFilm
-        ADD CONSTRAINT fk_NtFilmFilm Foreign KEY(nfilm_idFilm) References film(film_id) on cascade,
-        ADD CONSTRAINT fk_NtFilmUtil Foreign KEY(nfilm_idUtil) References utilisateur(util_id) on cascade;
+        ADD CONSTRAINT fk_NtFilmFilm Foreign KEY(nfilm_idFilm) References film(film_id) on delete cascade,
+        ADD CONSTRAINT fk_NtFilmUtil Foreign KEY(nfilm_idUtil) References utilisateur(util_id) on delete cascade;
 
