@@ -1,12 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.projetvideo.controlleur;
 
-
 import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
-import java.io.*;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -18,15 +13,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author ykurdija
- */
-
-
-public class Controlleur extends HttpServlet {
+public class Accueil extends HttpServlet {
 
     public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IPannierSession";
 
@@ -45,12 +33,12 @@ public class Controlleur extends HttpServlet {
             Context context = new InitialContext();
             Object obj = context.lookup(DEFAULT_JNDI_NAME);
             IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
-            
-            
+
+
             //request.setAttribute("lesDoc", pannierSession.getPannier(1));
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("webApp/index.jsp").forward(request, response);
         } catch (NamingException ex) {
-            Logger.getLogger(Controlleur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
