@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.projetvideo.controlleur;
 
 import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -19,7 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Pannier extends HttpServlet {
+public class Inscription extends HttpServlet {
 
     public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IPannierSession";
 
@@ -49,17 +46,24 @@ public class Pannier extends HttpServlet {
                     cpt++;
                 }
             }
-
-            if (!foundCookie) {
-                request.getRequestDispatcher("webApp/notConnected.jsp").forward(request, response);
+            
+            if (foundCookie) {
+                response.sendRedirect("Accueil");
             } else {
-                Context context = new InitialContext();
-                Object obj = context.lookup(DEFAULT_JNDI_NAME);
-                IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
+                if (request.getParameter("action") != null) {
+                    Context context = new InitialContext();
+                    Object obj = context.lookup(DEFAULT_JNDI_NAME);
+                    IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
 
 
-                //request.setAttribute("lesDoc", pannierSession.getPannier(1));
-                request.getRequestDispatcher("webApp/pannier.jsp").forward(request, response);
+                    //request.setAttribute("lesDoc", pannierSession.getPannier(1));
+                    
+                    System.out.println("daccord");
+                } else {
+                    System.out.println("pas daccord");
+                }
+
+                request.getRequestDispatcher("webApp/inscription.jsp").forward(request, response);
             }
 
             //if (!foundCookie) { Cookie cookie1 = new Cookie("color", "cyan");

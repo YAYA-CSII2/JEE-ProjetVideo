@@ -10,6 +10,7 @@ import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,22 +32,39 @@ public class Connexion extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            if (request.getParameter("action") != null) {
-                Context context = new InitialContext();
-                Object obj = context.lookup(DEFAULT_JNDI_NAME);
-                IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
+            Cookie[] cookies = request.getCookies();
+            boolean foundCookie = false;
 
-
-                //request.setAttribute("lesDoc", pannierSession.getPannier(1));
-                
-
-                System.out.println("daccord");
-            } else {
-                System.out.println("pas daccord");
+            if (cookies != null) {
+                int cpt = 0;
+                while (foundCookie != true && cpt < cookies.length) {;
+                    if (cookies[cpt].getName().equals("connected")) {
+                        System.out.println("foundcookie");
+                        foundCookie = true;
+                    }
+                    cpt++;
+                }
             }
-            
-            request.getRequestDispatcher("webApp/connexion.jsp").forward(request, response);
-            
+
+            if (foundCookie) {
+                response.sendRedirect("Accueil");
+            } else {
+                if (request.getParameter("action") != null) {
+                    Context context = new InitialContext();
+                    Object obj = context.lookup(DEFAULT_JNDI_NAME);
+                    IPannierSession pannierSession = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
+
+
+                    //request.setAttribute("lesDoc", pannierSession.getPannier(1));
+
+
+                    System.out.println("daccord");
+                } else {
+                    System.out.println("pas daccord");
+                }
+
+                request.getRequestDispatcher("webApp/connexion.jsp").forward(request, response);
+            }
         } catch (NamingException ex) {
             Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
         }

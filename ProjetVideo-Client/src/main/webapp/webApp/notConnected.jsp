@@ -16,24 +16,19 @@
                 
                 <a href="Connexion">Connexion</a>
             </div>
-            <div id="footer">
+        <div id="footer">
+            <div>
                 <div>
-                    <div>
-                        <h3>Contactez-nous</h3>
-                        <ul>
-                            <li>toto@toto.fr</li>				
-                            <li>257-301-9417 toll free</li>
-                        </ul>			
-                    </div>			
-                    <div>
-                        <h3>Suivez Nous:</h3>
-                        <a class="facebook" href="http://facebook.com/freewebsitetemplates" target="_blank">facebook</a>		
-                        <a class="twitter" href="http://twitter.com/fwtemplates" target="_blank">twitter</a>
-                    </div>	
-                </div>
-                <div>
-                    <p>&copy Copyright 2012. All rights reserved YAYA Corp</p>
+                    <h3>Contactez-nous</h3>
+                    <ul>
+                        <li>toto@toto.fr</li>				
+                        <li>257-301-9417 toll free</li>
+                    </ul>			
                 </div>
             </div>
-        </body>
-    </html>
+            <div>
+                <p>&copy; Copyright 2012. All rights reserved YAYA Corp</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -12,6 +12,10 @@
         <servlet-name>Pannier</servlet-name>
         <servlet-class>com.projetvideo.controlleur.Pannier</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inscription</servlet-name>
+        <servlet-class>com.projetvideo.controlleur.Inscription</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Accueil</servlet-name>
         <url-pattern>/Accueil</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Pannier</servlet-name>
         <url-pattern>/Pannier</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inscription</servlet-name>
+        <url-pattern>/Inscription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
