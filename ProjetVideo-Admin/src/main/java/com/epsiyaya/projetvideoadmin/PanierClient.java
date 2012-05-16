@@ -35,7 +35,7 @@ public class PanierClient {
             pannierSession.removeProduit(1, 5);
 
             pannierSession.validerPanier();*/
-            
+          // System.out.println("après instanciation du Ipannier");
             pannierSession.test();
         } catch (NamingException nex) {
             nex.printStackTrace();

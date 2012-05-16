@@ -12,14 +12,23 @@ public class NoteFilm {
         description = desc;
     }
 
+    public void setUtil(Utilisateur util) {
+        this.util = util;
+    }
+
     public Utilisateur getUtil() {
         return util;
     }
+    
 
     public int getNote() {
         return note;
     }
 
+    public void setNote(Integer note) {
+        this.note = note;
+    }
+    
     public String getDescription() {
         return description;
     }

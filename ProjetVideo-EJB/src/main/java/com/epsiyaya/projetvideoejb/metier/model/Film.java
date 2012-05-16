@@ -21,7 +21,7 @@ public class Film {
     private Set<Personnalite> acteurs = new HashSet<Personnalite>();
     private Set<BandeAnnonce> bandeAnnonces = new HashSet<BandeAnnonce>();
     private Set<Photo> photos = new HashSet<Photo>();
-    private Set<Categorie> categorie = new HashSet<Categorie>();
+    private Set<Categorie> categories = new HashSet<Categorie>();
     private Set<NoteFilm> notesDuFilm = new HashSet<NoteFilm>();
 
     public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real) {
@@ -37,7 +37,7 @@ public class Film {
         realisateur = real;
     }
 
-    public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real, Set actors, HashSet<BandeAnnonce> BandeAnnonces, HashSet<Photo> Photos, HashSet<NoteFilm> notes) {
+    public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real, HashSet<Personnalite> actors, HashSet<BandeAnnonce> BandeAnnonces, HashSet<Photo> Photos, HashSet<NoteFilm> notes) {
         nom = Nom;
         lienFilm = LienFilm;
         synopsis = Synopsis;
@@ -53,6 +53,11 @@ public class Film {
         photos = Photos;
         notesDuFilm = notes;
     }
+    // pour un fucking test
+    public Film(String Nom, HashSet<NoteFilm> desNotes) {
+        nom = Nom;
+        notesDuFilm = desNotes;
+    }
 
     public Integer getDuree() {
         return duree;
@@ -62,12 +67,12 @@ public class Film {
         duree = Duree;
     }
 
-    public Date getDateDeSortie() {
+   public Date getDateDeSortie() {
         return dateDeSortie.toDate();
     }
-
+    
     public DateTime getDateTimeDeSortie() {
-        return dateDeSortie;
+        return dateDeSortie.toDateTime();
     }
 
     public void setDateDeSortie(Date date) {
@@ -138,23 +143,28 @@ public class Film {
         return bandeAnnonces;
     }
 
-    public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
+    /*public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
+        this.bandeAnnonces = bandeAnnonces;
+    }*/
+
+    public void setBandeAnnonces(Set<BandeAnnonce> bandeAnnonces) {
         this.bandeAnnonces = bandeAnnonces;
     }
+    
 
-    public Set<Categorie> getCategorie() {
-        return categorie;
+    public Set<Categorie> getCategories() {
+        return categories;
     }
 
-    public void setCategorie(HashSet<Categorie> categorie) {
-        this.categorie = categorie;
+    public void setCategories(Set<Categorie> categorie) {
+        this.categories = categorie;
     }
 
     public Set<Photo> getPhotos() {
         return photos;
     }
 
-    public void setPhotos(HashSet<Photo> photos) {
+    public void setPhotos(Set<Photo> photos) {
         this.photos = photos;
     }
 
@@ -198,7 +208,7 @@ public class Film {
         return notesDuFilm;
     }
 
-    public void setNoteDuFilm(HashSet<NoteFilm> notes) {
+    public void setNotesDuFilm(Set<NoteFilm> notes) {
         notesDuFilm = notes;
     }
 }

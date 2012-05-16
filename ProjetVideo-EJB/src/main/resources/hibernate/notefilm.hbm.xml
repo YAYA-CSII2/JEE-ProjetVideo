@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="NoteFilm" table="noteFilm">
+        
+       <id column="nfilm_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+       </id>
+        
+        <property name="note" column="nfilm_note" type="integer" />
+        <property name="description" column="nfilm_commentaire" type="string" length="255" />
+        
+        <many-to-one name="util" class="Utilisateur" column="nfilm_idUtil" cascade="save-update" />
+        
+    </class>
+</hibernate-mapping>

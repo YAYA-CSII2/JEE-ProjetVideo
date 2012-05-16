@@ -6,18 +6,18 @@ import java.util.Set;
 public class Categorie {
 
     private String nom;
-    private Set<Film> mesFilms = new HashSet<Film>();
+    private Set<Film> films = new HashSet<Film>();
     
     public Categorie(String Nom) {
         nom = Nom;
     }
     
-    public Set<Film> getMesFilms() {
-        return mesFilms;
+    public Set<Film> getFilms() {
+        return films;
     }
 
-    public void setMesFilms(Set<Film> mesFilms) {
-        this.mesFilms = mesFilms;
+    public void setFilms(Set<Film> mesFilms) {
+        this.films = mesFilms;
     }
 
     public String getNom() {

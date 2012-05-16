@@ -3,13 +3,13 @@
      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
      "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
-    <class name="BandeAnnonce" table="bandeannonce">
-        <id column="bd_id" type="integer" unsaved-value="null">
+    <class name="Photo" table="photo">
+        <id column="photo_id" type="integer" unsaved-value="null">
             <generator class="native" />
         </id>
         
-        <property name="lienVideo" column="bd_lienVideo" type="string" length="150" />
-        <property name="description" column="bd_description" type="string" length="255" />
+        <property name="lienPhoto" column="photo_lienPhoto" type="string" length="150" />
+        <property name="description" column="photo_description" type="string" length="255" />
                 
     </class>
 </hibernate-mapping>

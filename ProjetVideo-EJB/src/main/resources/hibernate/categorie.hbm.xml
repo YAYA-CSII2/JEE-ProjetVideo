@@ -9,10 +9,10 @@
             <generator class="native" />
        </id>
         
-        <property name="nom" column="categ_libelle" type="string" length="60" unsaved-value="null"/>
+        <property name="nom" column="categ_libelle" type="string" length="60"/>
         
-        <set name="mesFilms" table="appartenir">
-            <key column="app_categId" />
+        <set name="films" table="appartenir">
+            <key column="app_categId" not-null="true"/>
             <many-to-many  class="Film" column="app_filmId"/>
         </set>
     </class>

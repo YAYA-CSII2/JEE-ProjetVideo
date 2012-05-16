@@ -26,22 +26,22 @@
         </set>
         
         <set name="bandeAnnonces" table="bandeannonce">
-            <key column="bd_idFilm" />
+            <key column="bd_idFilm" not-null="true"/>
             <one-to-many  class="BandeAnnonce"/>
         </set>
         
         <set name="photos" table="photo">
-            <key column="photo_idFilm" />
+            <key column="photo_idFilm" not-null="true"/>
             <one-to-many  class="Photo"/>
         </set>
         
-        <set name="categorie" table="appartenir">
-            <key column="app_filmId" />
+        <set name="categories" table="appartenir">
+            <key column="app_filmId" not-null="true" />
             <many-to-many  class="Categorie" column="app_categId"/>
         </set>
-        
+       
          <set name="notesDuFilm" table="noteFilm">
-            <key column="nfilm_idFilm" />
+            <key column="nfilm_idFilm" not-null="true"  />
             <one-to-many  class="NoteFilm"/>
         </set>
     </class>

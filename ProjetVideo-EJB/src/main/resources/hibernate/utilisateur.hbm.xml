@@ -15,6 +15,9 @@
         <property name="adresse" column="util_adresse" type="string" length="100" />
         <property name="codePostale" column="util_codepostale" type="string" length="10" />
         <property name="pays" column="util_pays" type="string" length="50" />
-        <property name="roleAdministrateur" column="util_isAdmin" type="boolean" />
+        <property name="pays" column="util_numerocartecredit" type="string" length="50" />
+        <property name="roleAdministrateur" column="util_admin" type="boolean" />
+        
+        <one-to-one name="carteVideoClub" class="CarteVideoClub"/>
     </class>
 </hibernate-mapping>

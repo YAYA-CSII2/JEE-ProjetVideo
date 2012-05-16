@@ -12,7 +12,8 @@ public class Utilisateur {
     private String codePostale;
     private String pays;
     private Boolean roleAdministrateur;
-    private Integer pointFidelite;
+    private CarteVideoClub carteVideoClub;
+    
     private ArrayList<FilmAchete> filmAchetes = new ArrayList<FilmAchete>();
     private ArrayList<FilmLoue> filmLoues = new ArrayList<FilmLoue>();
 
@@ -100,13 +101,15 @@ public class Utilisateur {
         roleAdministrateur = RoleAdministrateur;
     }
 
-    public int getPontFidelite() {
-        return pointFidelite;
+    public CarteVideoClub getCarteVideoClub() {
+        return carteVideoClub;
     }
 
-    public void setPontFidelite(Integer _pointFidelite) {
-        pointFidelite = _pointFidelite;
+    public void setCarteVideoClub(CarteVideoClub carteVideoClub) {
+        this.carteVideoClub = carteVideoClub;
     }
+    
+    
 
     public ArrayList<FilmAchete> getFilmAchetes() {
         return filmAchetes;

@@ -12,7 +12,12 @@
         <mapping resource="hibernate/utilisateur.hbm.xml" />
         <mapping resource="hibernate/film.hbm.xml" />
         <mapping resource="hibernate/personnalite.hbm.xml" />
-        <mapping resource="hibernate/filmloue.hbm.xml" />
+        <mapping resource="hibernate/bandeannonce.hbm.xml" />
+        <mapping resource="hibernate/categorie.hbm.xml" />
+        <mapping resource="hibernate/photo.hbm.xml" />
+        <mapping resource="hibernate/notefilm.hbm.xml" /> 
+        <mapping resource="hibernate/cartevideoclub.hbm.xml" />
+        <!--<mapping resource="hibernate/filmloue.hbm.xml" />-->
         
     </session-factory>
 </hibernate-configuration>
