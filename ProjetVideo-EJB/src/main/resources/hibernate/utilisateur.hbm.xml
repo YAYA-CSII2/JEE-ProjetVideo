@@ -15,9 +15,24 @@
         <property name="adresse" column="util_adresse" type="string" length="100" />
         <property name="codePostale" column="util_codepostale" type="string" length="10" />
         <property name="pays" column="util_pays" type="string" length="50" />
-        <property name="pays" column="util_numerocartecredit" type="string" length="50" />
         <property name="roleAdministrateur" column="util_admin" type="boolean" />
+               
+       <many-to-one name="carteVideoClub" class="CarteVideoClub"
+        column="util_cvc_Id" 
+        unique="true"
+        not-null="true"/>
         
-        <one-to-one name="carteVideoClub" class="CarteVideoClub"/>
+       <one-to-many name="filmLoues" class="">
+           
+       <set name="filmLoues" table="filmloue">
+            <key column="filml_idUtil" not-null="true"/>
+            <one-to-many  class="FilmLoue"/>
+        </set>
+        
+        <set name="filmAchetes" table="filmAchete">
+            <key column="filmA_idUtil" not-null="true"/>
+            <one-to-many  class="FilmAchete"/>
+        </set>
+        
     </class>
 </hibernate-mapping>

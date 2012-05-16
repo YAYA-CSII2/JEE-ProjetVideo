@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-
-
-<root>
-    
-</root>
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epsiyaya.projetvideoejb.metier.model">
+    <class name="FilmAchete" table="filmAchete">
+        
+       <id column="filmA_id" type="integer" unsaved-value="null">
+            <generator class="native" />
+        </id>
+        
+        <property name="dateAchat" column="filmA_dateAchat" type="date" unsaved-value="null"/>
+        
+        <many-to-one name="monFilmAchete" class="Film" column="filmA_idFilm" cascade="save-update" />
+        <many-to-one name="acheteur" class="Utilisateur" column="filmA_idUtil" cascade="save-update" />
+        
+    </class>
+</hibernate-mapping>

@@ -17,7 +17,8 @@
         <mapping resource="hibernate/photo.hbm.xml" />
         <mapping resource="hibernate/notefilm.hbm.xml" /> 
         <mapping resource="hibernate/cartevideoclub.hbm.xml" />
-        <!--<mapping resource="hibernate/filmloue.hbm.xml" />-->
+        <mapping resource="hibernate/filmloue.hbm.xml" />
+        <mapping resource="hibernate/filmachete.hbm.xml" />
         
     </session-factory>
 </hibernate-configuration>

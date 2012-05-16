@@ -1,22 +1,40 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
+import java.util.Date;
 import org.joda.time.DateTime;
 
 public class FilmAchete {
 
-    private Film filmAchete;
+    private Film monFilmAchete;
     private DateTime dateAchat;
+    private Utilisateur acheteur;
 
     public FilmAchete(DateTime date, Film film) {
         dateAchat = date;
-        filmAchete = film;
+        monFilmAchete = film;
     }
 
-    public Film getFilmAchete() {
-        return filmAchete;
+    public Film getMonFilmAchete() {
+        return monFilmAchete;
     }
 
-    public DateTime getDateAchat() {
-        return dateAchat;
+    public void setMonFilmAchete(Film monFilmAchete) {
+        this.monFilmAchete = monFilmAchete;
+    }
+
+    public Utilisateur getAcheteur() {
+        return acheteur;
+    }
+
+    public void setAcheteur(Utilisateur acheteur) {
+        this.acheteur = acheteur;
+    }
+    
+    public Date getDateAchat() {
+        return dateAchat.toDate();
+    }
+
+    public void setDateAchat(DateTime dateAchat) {
+        this.dateAchat = dateAchat;
     }
 }

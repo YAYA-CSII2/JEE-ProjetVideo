@@ -25,16 +25,24 @@ public class FilmLoue {
         this.monLoueur = monLoueur;
     }
 
-    public Film getFilmLoue() {
+    public Film getMonFilmLoue() {
         return monFilmLoue;
     }
 
+    public void setMonFilmLoue(Film monFilmLoue) {
+        this.monFilmLoue = monFilmLoue;
+    }
+    
     public DateTime getDateTimeLocation() {
         return dateLocation;
     }
     
-    public Date getDateDeSortie() {
+    public Date getDateLocation() {
         return dateLocation.toDate();
+    }
+
+    public void setDateLocation(DateTime dateLocation) {
+        this.dateLocation = dateLocation;
     }
 
     public Integer getDuree() {
@@ -44,4 +52,6 @@ public class FilmLoue {
     public void setDuree(Integer Duree) {
         duree = Duree;
     }
+    
+    
 }
