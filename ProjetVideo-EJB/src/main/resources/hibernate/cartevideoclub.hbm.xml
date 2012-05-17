@@ -10,6 +10,7 @@
         
         <property name="numeroCarteFidel" column="cvc_numeroCarteFidel" type="char" length="10" />
         <property name="pointFidelite" column="cvc_pointfidelite" type="integer" />
+        <many-to-one name="utilCarte" class="Utilisateur" column="cvc_idPosseseur" cascade="save-update" />
         
     </class>
 </hibernate-mapping>

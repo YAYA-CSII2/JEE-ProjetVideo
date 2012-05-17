@@ -39,8 +39,7 @@ public class PanierBean implements IPannierSession {
         
         Utilisateur user = new Utilisateur("login", "mdp", "nom", "prenom", "adresse", "codepostal", "pays", true);
         DateTime d = new DateTime();
-        CarteVideoClub uneCarte = new CarteVideoClub("7897878765", 10);
-        user.setCarteVideoClub(uneCarte);
+        CarteVideoClub uneCarte = new CarteVideoClub("7897878765", 10, user);
         
       //  Personnalite perso = new Personnalite("nomPersonnalite", "prenomPersonnalite", d, "Description du mec");
       //  Personnalite perso2 = new Personnalite("nomPersonnalite2", "prenomPersonnalite2", d, "Description du mec2");

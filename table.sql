@@ -60,10 +60,9 @@ CREATE TABLE categorie (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE appartenir (
-        app_id int NOT NULL AUTO_INCREMENT,
 	app_categId int NOT NULL,
 	app_filmId int NOT NULL,
-	PRIMARY KEY(app_id)
+	PRIMARY KEY(app_categId, app_filmId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE film (

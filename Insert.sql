@@ -30,18 +30,18 @@ insert into film(film_nom, film_lienAffiche, film_synopsis, film_datedesortie, f
 ("Sur la piste du Marsupilami","C:\affiche\afficheLes Hauts de Hurlevent.jpg","azerty","01/01/2012","90","C:\film\filmSur la piste du Marsupilami.avi","2011",56.2,10.2,3);
 
 insert into appartenir(app_categId,app_filmId) values
-(1,101),
-(1,102),
-(1,104),
-(1,103),
-(1,105),
-(2,103),
-(2,107),
-(2,109),
-(3,106),
-(4,108),
-(4,105),
-(4,106);
+(1, 1),
+(1, 2),
+(1, 4),
+(1, 3),
+(1, 5),
+(2, 10),
+(2, 7),
+(2, 9),
+(3, 6),
+(4, 8),
+(4, 5),
+(4, 6);
 
 insert into cartevideoclub(cvc_numeroCarteFidel,cvc_pointfidelite,cvc_idPosseseur) values
 ("0123456789",10,1),
@@ -51,38 +51,38 @@ insert into cartevideoclub(cvc_numeroCarteFidel,cvc_pointfidelite,cvc_idPosseseu
 
 
 insert into filmloue(filml_idFilm, filml_idUtil, filml_datelocation, filml_duree) values
-(101,1,"01/04/2012",50),
-(102,1,"01/04/2012",20),
-(103,2,"01/04/2012",100),
-(107,3,"01/04/2012",2);
+(1,1,"01/04/2012",50),
+(2,1,"01/04/2012",20),
+(3,2,"01/04/2012",100),
+(7,3,"01/04/2012",2);
 
 
 insert into noteFilm(nfilm_idFilm, nfilm_idUtil, nfilm_note, nfilm_commentaire) values
-(101,1,5,"bon film"),
-(102,2,5,"bon film"),
-(103,2,1,"mauvais film"),
-(104,3,1,"mauvais film");
+(1,1,5,"bon film"),
+(2,2,5,"bon film"),
+(3,2,1,"mauvais film"),
+(4,3,1,"mauvais film");
 
 insert into bandeannonce(bd_lienVideo, bd_description, bd_idFilm) values
-("C:\bd\bdShadow & moi.avi","bande annonce du film",103),
-("C:\bd\bdUn homme par hasard1.avi","bande annonce explosive du film",101),
-("C:\bd\bdLes Hauts de Hurlevent.avi","une très bonne intro",102),
-("C:\bd\bdUn homme par hasard2.avi","bande annonce a ne pas raté du film",101);
+("C:\bd\bdShadow & moi.avi","bande annonce du film",3),
+("C:\bd\bdUn homme par hasard1.avi","bande annonce explosive du film",1),
+("C:\bd\bdLes Hauts de Hurlevent.avi","une très bonne intro",2),
+("C:\bd\bdUn homme par hasard2.avi","bande annonce a ne pas raté du film",1);
 
 
 insert into photo(photo_lienPhoto, photo_description, photo_idFilm) values
-("C:\photo\photoShadow & moi.jpg","photo du film",103),
-("C:\photo\photoUn homme par hasard1.jpg","photo explosive du film",101),
-("C:\photo\photoLes Hauts de Hurlevent.jpg","une très bonne prise de vu",102),
-("C:\photo\photoUn homme par hasard2.jpg","photo a ne pas raté du film",101);
+("C:\photo\photoShadow & moi.jpg","photo du film",3),
+("C:\photo\photoUn homme par hasard1.jpg","photo explosive du film",1),
+("C:\photo\photoLes Hauts de Hurlevent.jpg","une très bonne prise de vu",2),
+("C:\photo\photoUn homme par hasard2.jpg","photo a ne pas raté du film",1);
 
 
 insert into jouer(jouer_idFilm, jouer_idPersonnalite) values
-(101,2),
-(101,1),
-(101,3),
-(101,4),
-(102,2),
-(102,3),
-(109,1),
-(108,2);
+(1,2),
+(1,1),
+(1,3),
+(1,4),
+(2,2),
+(2,3),
+(9,1),
+(8,2);

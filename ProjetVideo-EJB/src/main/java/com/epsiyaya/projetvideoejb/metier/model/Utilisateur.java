@@ -1,8 +1,7 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
-import java.util.ArrayList;
-
 public class Utilisateur {
+
     private String login;
     private String motDePasse;
     private String nom;
@@ -12,10 +11,8 @@ public class Utilisateur {
     private String codePostale;
     private String pays;
     private Boolean roleAdministrateur;
-    private CarteVideoClub carteVideoClub;
-    
-    private ArrayList<FilmAchete> filmAchetes = new ArrayList<FilmAchete>();
-    private ArrayList<FilmLoue> filmLoues = new ArrayList<FilmLoue>();
+    //private Set<FilmAchete> filmAchetes = new HashSet<FilmAchete>();
+    //private Set<FilmLoue> filmLoues = new HashSet<FilmLoue>();
 
     public Utilisateur(String Login, String MotDePasse, String Nom, String Prenom, String Adresse,
             String CodePostale, String Pays, Boolean RoleAdministrateur) {
@@ -36,7 +33,7 @@ public class Utilisateur {
     public void setLogin(String log) {
         login = log;
     }
-        
+
     public String getMotDePasse() {
         return motDePasse;
     }
@@ -101,29 +98,19 @@ public class Utilisateur {
         roleAdministrateur = RoleAdministrateur;
     }
 
-    public CarteVideoClub getCarteVideoClub() {
-        return carteVideoClub;
-    }
-
-    public void setCarteVideoClub(CarteVideoClub carteVideoClub) {
-        this.carteVideoClub = carteVideoClub;
-    }
-    
-    
-
-    public ArrayList<FilmAchete> getFilmAchetes() {
+    /*public Set<FilmAchete> getFilmAchetes() {
         return filmAchetes;
     }
 
-    public void setFilmAchetes(ArrayList<FilmAchete> _filmAchetes) {
+    public void setFilmAchetes(Set<FilmAchete> _filmAchetes) {
         filmAchetes = _filmAchetes;
     }
 
-    public ArrayList<FilmLoue> getFilmLoues() {
+    public Set<FilmLoue> getFilmLoues() {
         return filmLoues;
     }
 
-    public void setFilmLoues(ArrayList<FilmLoue> _filmLoues) {
+    public void setFilmLoues(Set<FilmLoue> _filmLoues) {
         filmLoues = _filmLoues;
-    }
+    }*/
 }

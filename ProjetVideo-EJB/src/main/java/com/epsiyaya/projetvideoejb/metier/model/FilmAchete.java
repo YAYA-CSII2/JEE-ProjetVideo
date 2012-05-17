@@ -29,12 +29,20 @@ public class FilmAchete {
     public void setAcheteur(Utilisateur acheteur) {
         this.acheteur = acheteur;
     }
-    
+
     public Date getDateAchat() {
         return dateAchat.toDate();
     }
 
-    public void setDateAchat(DateTime dateAchat) {
-        this.dateAchat = dateAchat;
+    public void setDateAchat(Date date) {
+        dateAchat = new DateTime(date);
+    }
+
+    public DateTime getDateTimeAchat() {
+        return dateAchat;
+    }
+
+    public void setDateTimeAchat(DateTime date) {
+        dateAchat = date;
     }
 }

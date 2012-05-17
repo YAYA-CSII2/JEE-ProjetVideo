@@ -9,10 +9,10 @@
             <generator class="native" />
         </id>
         
-        <property name="dateAchat" column="filmA_dateAchat" type="date" unsaved-value="null"/>
+        <property name="dateAchat" column="filmA_dateAchat" type="date" />
         
         <many-to-one name="monFilmAchete" class="Film" column="filmA_idFilm" cascade="save-update" />
-        <many-to-one name="acheteur" class="Utilisateur" column="filmA_idUtil" cascade="save-update" />
+        <many-to-one name="acheteur" class="Utilisateur" column="filmA_idUtil" />
         
     </class>
 </hibernate-mapping>

@@ -9,8 +9,8 @@
             <generator class="native" />
         </id>
         
-        <property name="dateLocation" column="filml_datelocation" type="date" unsaved-value="null"/>
-        <property name="duree" column="filml_duree" type="integer" unsaved-value="null"/>
+        <property name="dateLocation" column="filml_datelocation" type="date" />
+        <property name="duree" column="filml_duree" type="integer" />
         
         <many-to-one name="monFilmLoue" class="Film" column="filml_idFilm" cascade="save-update" />
         <many-to-one name="monLoueur" class="Utilisateur" column="filml_idUtil" cascade="save-update" />
