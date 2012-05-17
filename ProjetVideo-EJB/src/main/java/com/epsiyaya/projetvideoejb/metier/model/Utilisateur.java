@@ -1,6 +1,8 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
-public class Utilisateur {
+import java.io.Serializable;
+
+public class Utilisateur implements Serializable {
 
     private String login;
     private String motDePasse;
@@ -13,6 +15,9 @@ public class Utilisateur {
     private Boolean roleAdministrateur;
     //private Set<FilmAchete> filmAchetes = new HashSet<FilmAchete>();
     //private Set<FilmLoue> filmLoues = new HashSet<FilmLoue>();
+
+    public Utilisateur() {
+    }
 
     public Utilisateur(String Login, String MotDePasse, String Nom, String Prenom, String Adresse,
             String CodePostale, String Pays, Boolean RoleAdministrateur) {
@@ -98,19 +103,15 @@ public class Utilisateur {
         roleAdministrateur = RoleAdministrateur;
     }
 
-    /*public Set<FilmAchete> getFilmAchetes() {
-        return filmAchetes;
-    }
-
-    public void setFilmAchetes(Set<FilmAchete> _filmAchetes) {
-        filmAchetes = _filmAchetes;
-    }
-
-    public Set<FilmLoue> getFilmLoues() {
-        return filmLoues;
-    }
-
-    public void setFilmLoues(Set<FilmLoue> _filmLoues) {
-        filmLoues = _filmLoues;
-    }*/
+    /*
+     * public Set<FilmAchete> getFilmAchetes() { return filmAchetes; }
+     *
+     * public void setFilmAchetes(Set<FilmAchete> _filmAchetes) { filmAchetes =
+     * _filmAchetes; }
+     *
+     * public Set<FilmLoue> getFilmLoues() { return filmLoues; }
+     *
+     * public void setFilmLoues(Set<FilmLoue> _filmLoues) { filmLoues =
+     * _filmLoues; }
+     */
 }

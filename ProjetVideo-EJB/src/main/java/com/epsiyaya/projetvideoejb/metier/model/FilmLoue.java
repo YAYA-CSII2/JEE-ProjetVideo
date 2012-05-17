@@ -1,14 +1,18 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import org.joda.time.DateTime;
 
-public class FilmLoue {
+public class FilmLoue implements Serializable {
 
     private DateTime dateLocation;
     private Integer duree;
     private Film monFilmLoue;
     private Utilisateur monLoueur;
+
+    public FilmLoue() {
+    }
 
     public FilmLoue(Film MonFilmLoue, Utilisateur MonLoueur, DateTime DateLocation, Integer Duree) {
         monLoueur = MonLoueur;

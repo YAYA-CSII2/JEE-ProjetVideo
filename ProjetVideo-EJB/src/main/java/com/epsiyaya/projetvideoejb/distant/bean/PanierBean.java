@@ -12,6 +12,7 @@ import java.util.Set;
 @Stateful
 public class PanierBean implements IPannierSession {
     
+        
     @Override
     public void test() {
       //  PersonnaliteDAO personnaliteDAO = new PersonnaliteDAO();

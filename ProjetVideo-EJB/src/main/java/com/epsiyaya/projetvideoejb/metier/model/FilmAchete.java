@@ -1,13 +1,17 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import org.joda.time.DateTime;
 
-public class FilmAchete {
+public class FilmAchete implements Serializable {
 
     private Film monFilmAchete;
     private DateTime dateAchat;
     private Utilisateur acheteur;
+
+    public FilmAchete() {
+    }
 
     public FilmAchete(DateTime date, Film film) {
         dateAchat = date;

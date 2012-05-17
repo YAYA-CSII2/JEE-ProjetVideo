@@ -11,7 +11,5 @@ public interface IPannierSession {
 	public void removeProduit(int idProduit, int quantitee);
 	
 	public void validerPanier();*/
-    
-    
     public void test();
 }

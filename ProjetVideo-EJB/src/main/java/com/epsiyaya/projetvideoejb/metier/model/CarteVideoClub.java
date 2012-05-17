@@ -1,10 +1,15 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
-public class CarteVideoClub {
+import java.io.Serializable;
+
+public class CarteVideoClub implements Serializable {
 
     private String numeroCarteFidel;
     private Integer pointFidelite;
     private Utilisateur utilCarte;
+
+    public CarteVideoClub() {
+    }
 
     public CarteVideoClub(String num, Integer pts, Utilisateur util) {
         numeroCarteFidel = num;

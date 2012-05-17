@@ -1,10 +1,15 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
-public class NoteFilm {
+import java.io.Serializable;
+
+public class NoteFilm implements Serializable {
 
     private Utilisateur util;
     private Integer note;
     private String description;
+
+    public NoteFilm() {
+    }
 
     public NoteFilm(Utilisateur user, int n, String desc) {
         util = user;
@@ -19,7 +24,6 @@ public class NoteFilm {
     public Utilisateur getUtil() {
         return util;
     }
-    
 
     public int getNote() {
         return note;
@@ -28,7 +32,7 @@ public class NoteFilm {
     public void setNote(Integer note) {
         this.note = note;
     }
-    
+
     public String getDescription() {
         return description;
     }

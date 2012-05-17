@@ -1,12 +1,13 @@
 package com.epsiyaya.projetvideoejb.metier.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import org.joda.time.DateTime;
 
-public class Film {
+public class Film implements Serializable {
 
     private String nom;
     private String lienAffiche;
@@ -23,6 +24,9 @@ public class Film {
     private Set<Photo> photos = new HashSet<Photo>();
     private Set<Categorie> categories = new HashSet<Categorie>();
     private Set<NoteFilm> notesDuFilm = new HashSet<NoteFilm>();
+
+    public Film() {
+    }
 
     public Film(String Nom, String LienFilm, String Synopsis, Integer Duree, DateTime DateDeSortie, String AnneeDeProduction, Float PrixAchat, Float PrixLocation, String linkAff, Personnalite real) {
         nom = Nom;
@@ -54,6 +58,7 @@ public class Film {
         notesDuFilm = notes;
     }
     // pour un fucking test
+
     public Film(String Nom, HashSet<NoteFilm> desNotes) {
         nom = Nom;
         notesDuFilm = desNotes;
@@ -67,10 +72,10 @@ public class Film {
         duree = Duree;
     }
 
-   public Date getDateDeSortie() {
+    public Date getDateDeSortie() {
         return dateDeSortie.toDate();
     }
-    
+
     public DateTime getDateTimeDeSortie() {
         return dateDeSortie.toDateTime();
     }
@@ -143,14 +148,14 @@ public class Film {
         return bandeAnnonces;
     }
 
-    /*public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
-        this.bandeAnnonces = bandeAnnonces;
-    }*/
-
+    /*
+     * public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
+     * this.bandeAnnonces = bandeAnnonces;
+    }
+     */
     public void setBandeAnnonces(Set<BandeAnnonce> bandeAnnonces) {
         this.bandeAnnonces = bandeAnnonces;
     }
-    
 
     public Set<Categorie> getCategories() {
         return categories;

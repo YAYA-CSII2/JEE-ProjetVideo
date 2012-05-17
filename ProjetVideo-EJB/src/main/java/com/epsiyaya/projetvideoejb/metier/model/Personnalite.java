@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 import org.joda.time.DateTime;
 
-public class Personnalite {
-    
+public class Personnalite implements Serializable {
+
     private Integer id;
     private String nom;
     private String prenom;
@@ -15,11 +15,9 @@ public class Personnalite {
     private String description;
     private Set<Film> filmJouer = new HashSet<Film>();
 
-    
     public Personnalite() {
-        
     }
-    
+
     public Personnalite(String nomPersonnalite, String prenomPersonnalite, DateTime d, String desc) {
         nom = nomPersonnalite;
         prenom = prenomPersonnalite;
@@ -30,11 +28,11 @@ public class Personnalite {
     public Integer getId() {
         return id;
     }
-    
+
     public void setId(Integer persoId) {
         id = persoId;
     }
-    
+
     public String getNom() {
         return nom;
     }
