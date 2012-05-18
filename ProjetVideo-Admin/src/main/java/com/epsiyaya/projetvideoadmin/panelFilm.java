@@ -83,7 +83,7 @@ public class panelFilm extends javax.swing.JPanel {
                 .add(0, 12, Short.MAX_VALUE))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Action", "Amour", "Horreur" }));
 
         jLabel5.setText("Categorie : ");
 
