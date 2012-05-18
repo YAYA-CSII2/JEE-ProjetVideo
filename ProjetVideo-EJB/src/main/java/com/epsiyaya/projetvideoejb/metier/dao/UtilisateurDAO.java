@@ -10,9 +10,12 @@ public class UtilisateurDAO extends BaseHibernateDAO {
     public void saveOrUpdate(Utilisateur utilisateur) {
         super.getSessionFactory().saveOrUpdate(utilisateur);
     }
-        
+
     public void deleteUtilisateur(Utilisateur utilisateur) {
         super.getSessionFactory().delete(utilisateur);
     }
 
+    public Object getUtilisateur(Integer idUtil) {
+        return super.getSessionFactory().get(Utilisateur.class, idUtil);
+    }
 }

@@ -9,6 +9,8 @@ import org.joda.time.DateTime;
 
 public class Film implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L; 
+    
     private String nom;
     private String lienAffiche;
     private String synopsis;
@@ -19,11 +21,11 @@ public class Film implements Serializable {
     private Float prixAchat;
     private Float prixLocationJour;
     private Personnalite realisateur;
-    private Set<Personnalite> acteurs = new HashSet<Personnalite>();
-    private Set<BandeAnnonce> bandeAnnonces = new HashSet<BandeAnnonce>();
-    private Set<Photo> photos = new HashSet<Photo>();
-    private Set<Categorie> categories = new HashSet<Categorie>();
-    private Set<NoteFilm> notesDuFilm = new HashSet<NoteFilm>();
+    private Set acteurs = null;
+    private Set bandeAnnonces = null;
+    private Set photos = null;
+    private Set categories = null;
+    private Set notesDuFilm = null;
 
     public Film() {
     }
@@ -59,7 +61,7 @@ public class Film implements Serializable {
     }
     // pour un fucking test
 
-    public Film(String Nom, HashSet<NoteFilm> desNotes) {
+    public Film(String Nom, Set desNotes) {
         nom = Nom;
         notesDuFilm = desNotes;
     }
@@ -144,24 +146,23 @@ public class Film implements Serializable {
         lienAffiche = linkAffiche;
     }
 
-    public Set<BandeAnnonce> getBandeAnnonces() {
+    public Set getBandeAnnonces() {
         return bandeAnnonces;
     }
 
     /*
      * public void setBandeAnnonces(HashSet<BandeAnnonce> bandeAnnonces) {
-     * this.bandeAnnonces = bandeAnnonces;
-    }
+     * this.bandeAnnonces = bandeAnnonces; }
      */
-    public void setBandeAnnonces(Set<BandeAnnonce> bandeAnnonces) {
+    public void setBandeAnnonces(Set bandeAnnonces) {
         this.bandeAnnonces = bandeAnnonces;
     }
 
-    public Set<Categorie> getCategories() {
+    public Set getCategories() {
         return categories;
     }
 
-    public void setCategories(Set<Categorie> categorie) {
+    public void setCategories(Set categorie) {
         this.categories = categorie;
     }
 
@@ -169,7 +170,7 @@ public class Film implements Serializable {
         return photos;
     }
 
-    public void setPhotos(Set<Photo> photos) {
+    public void setPhotos(Set photos) {
         this.photos = photos;
     }
 
@@ -189,11 +190,11 @@ public class Film implements Serializable {
         photos.remove(photo);
     }
 
-    public Set<Personnalite> getActeurs() {
+    public Set getActeurs() {
         return acteurs;
     }
 
-    public void setActeurs(Set<Personnalite> actors) {
+    public void setActeurs(Set actors) {
         acteurs = actors;
     }
 
@@ -209,11 +210,11 @@ public class Film implements Serializable {
         realisateur = real;
     }
 
-    public Set<NoteFilm> getNotesDuFilm() {
+    public Set getNotesDuFilm() {
         return notesDuFilm;
     }
 
-    public void setNotesDuFilm(Set<NoteFilm> notes) {
+    public void setNotesDuFilm(Set notes) {
         notesDuFilm = notes;
     }
 }

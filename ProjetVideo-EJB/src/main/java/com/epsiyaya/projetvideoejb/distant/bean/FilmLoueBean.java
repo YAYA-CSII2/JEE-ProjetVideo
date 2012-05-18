@@ -7,12 +7,13 @@ import com.epsiyaya.projetvideoejb.util.HibernateUtil;
 import java.util.HashSet;
 import java.util.Set;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
-@Stateful
+@Stateless
 public class FilmLoueBean implements IFilmLoueSession {
 
     @Override
-    public void getTenLast() {
+    public FilmLoue getTenLast() {
         FilmLoueDAO flDAO = new FilmLoueDAO();
 
         flDAO.setSessionFactory(HibernateUtil.getSessionFactory());
@@ -25,5 +26,7 @@ public class FilmLoueBean implements IFilmLoueSession {
         for (FilmLoue fl2 : t) {
             System.out.println("Film: " + fl2.getMonFilmLoue().getNom());
         }
+        
+        return fl;
     }
 }

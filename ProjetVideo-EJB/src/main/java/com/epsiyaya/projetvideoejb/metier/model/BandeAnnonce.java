@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class BandeAnnonce implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L;
     private String lienVideo;
     private String description;
     //private Film monFilm;
@@ -19,8 +20,7 @@ public class BandeAnnonce implements Serializable {
     /*
      * public Film getMonFilm() { return monFilm; }
      *
-     * public void setMonFilm(Film monFilm) { this.monFilm = monFilm;
-    }
+     * public void setMonFilm(Film monFilm) { this.monFilm = monFilm; }
      */
 
     public String getLienVideo() {

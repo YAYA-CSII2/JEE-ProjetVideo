@@ -8,6 +8,8 @@ import org.joda.time.DateTime;
 
 public class Personnalite implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L;
+    
     private Integer id;
     private String nom;
     private String prenom;

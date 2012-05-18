@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class NoteFilm implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L;
+
     private Utilisateur util;
     private Integer note;
     private String description;

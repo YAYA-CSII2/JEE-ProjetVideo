@@ -4,14 +4,71 @@ import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
 import com.epsiyaya.projetvideoejb.metier.dao.*;
 import com.epsiyaya.projetvideoejb.metier.model.*;
 import com.epsiyaya.projetvideoejb.util.HibernateUtil;
+import java.io.Serializable;
 import java.util.HashSet;
 import javax.ejb.Stateful;
 import org.joda.time.DateTime;
 import java.util.Set;
+import javax.ejb.Stateless;
+import org.hibernate.Session;
 
-@Stateful
-public class PanierBean implements IPannierSession {
+@Stateless
+public class PanierBean implements IPannierSession, Serializable {
+        
+
+    private static final long serialVersionUID = 3206093459760846969L;
     
+    @Override
+    public Film getTenLast() {
+        FilmDAO fDAO = new FilmDAO();
+        fDAO.setSessionFactory(HibernateUtil.getSessionFactory());
+
+        Film f = (Film)fDAO.getFilm(2);
+        /*FilmLoue fl2 = new FilmLoue();
+        Film f = new Film();
+        f.setNom("daccord");
+        fl2.setMonFilmLoue(f);
+        
+        Set t = new HashSet();
+        t.add(fl);*/
+        
+        System.out.println("Nom film: " + f.getNom());
+        System.out.println("Nom relisateur: " + f.getRealisateur().getNom());
+        for (Object o : f.getActeurs()) {
+            Personnalite acteur = (Personnalite)o;
+            System.out.println("Nom acteur: " + acteur.getNom());
+        }
+        for (Object o : f.getBandeAnnonces()) {
+            BandeAnnonce bd = (BandeAnnonce)o;
+            System.out.println("LienVideo: " + bd.getLienVideo());
+        }
+        for (Object o: f.getCategories()) {
+            Categorie categ = (Categorie)o;
+            System.out.println("Categorie: " + categ.getNom());
+        }
+        for (Object o: f.getNotesDuFilm()) {
+            NoteFilm nf = (NoteFilm)o;
+            System.out.println("Note Film: " + nf.getNote());
+        }
+        for (Object o: f.getPhotos()) {
+            Photo ph = (Photo)o;
+            System.out.println("LienPhoto: " + ph.getLienPhoto());
+        }
+        
+        
+        return f;
+    }
+    
+    @Override
+    public Utilisateur getUtil() {
+        UtilisateurDAO utilDAO = new UtilisateurDAO();
+        utilDAO.setSessionFactory(HibernateUtil.getSessionFactory());
+        Utilisateur util = (Utilisateur)utilDAO.getUtilisateur(1);
+        
+        System.out.println("Prenom Utilisateur: " + util.getPrenom());
+        
+        return util;
+    };
         
     @Override
     public void test() {

@@ -25,14 +25,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>ProjetVideo-EJB</artifactId>
             <version>${project.version}</version>
-            <type>ejb</type>
         </dependency>
-        
         <dependency>
             <groupId>org.glassfish.extras</groupId>
             <artifactId>glassfish-embedded-all</artifactId>

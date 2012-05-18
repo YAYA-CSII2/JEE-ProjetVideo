@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class CarteVideoClub implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L;
+
     private String numeroCarteFidel;
     private Integer pointFidelite;
     private Utilisateur utilCarte;

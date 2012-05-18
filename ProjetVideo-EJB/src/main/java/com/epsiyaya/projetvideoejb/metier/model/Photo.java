@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Photo implements Serializable {
 
+    private static final long serialVersionUID = 3206093459760846969L;
     private String lienPhoto;
     private String description;
 

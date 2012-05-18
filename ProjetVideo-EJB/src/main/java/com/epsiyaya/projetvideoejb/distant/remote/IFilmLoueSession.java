@@ -6,5 +6,5 @@ import javax.ejb.Remote;
 
 @Remote
 public interface IFilmLoueSession {
-    public void getTenLast();
+    public FilmLoue getTenLast();
 }
