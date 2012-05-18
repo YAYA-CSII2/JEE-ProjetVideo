@@ -22,17 +22,17 @@
     <ul id="navigation">
         <li class="selected"><a href="Accueil" class="boutton"><span>ACCEUIL</span></a></li>
         <%
-            if (!foundCookie) {
+            //if (!foundCookie) {
         %>
         <li><a href="Inscription" class="boutton"><span>INSCRIPTION</span></a></li>
         <li><a href="Connexion" class="boutton"><span>CONNEXION</span></a></li>	
         <%
-            } else {
+            //} else {
         %>
         <li><a href="profil.html" class="boutton"><span>PROFIL</span></a></li>
         <li><a href="Pannier" class="boutton"><span>PANIER</span></a></li>
         <%
-            }
+            //}
         %>
     </ul>
     

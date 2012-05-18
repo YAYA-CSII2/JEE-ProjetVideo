@@ -16,59 +16,60 @@
         <div class="conteneurFilmGenre">
             Derniers Films Lou&eacute;s :
             <ul>
-                <li><a href="http://www.allocine.fr">Film1</a></li>
-                <li><a href="http://www.allocine.fr/">Film2</a></li>
-                <li><a href="http://www.allocine.fr/">Film3</a></li>
-                <li><a href="http://www.allocine.fr/">Film4</a></li>
-                <li><a href="http://www.allocine.fr/">Film5</a></li>
-                <li><a href="http://www.allocine.fr/">Film6</a></li>
-                <li><a href="http://www.allocine.fr/">Film7</a></li>
-                <li><a href="http://www.allocine.fr/">Film8</a></li>
-                <li><a href="http://www.allocine.fr/">Film9</a></li>
-                <li><a href="http://www.allocine.fr/">Film10</a></li>
+                <li><a href="Film">Film1</a></li>
+                <li><a href="Film">Film2</a></li>
+                <li><a href="Film">Film3</a></li>
+                <li><a href="Film">Film4</a></li>
+                <li><a href="Film">Film5</a></li>
+                <li><a href="Film">Film6</a></li>
+                <li><a href="Film">Film7</a></li>
+                <li><a href="Film">Film8</a></li>
+                <li><a href="Film">Film9</a></li>
+                <li><a href="Film">Film10</a></li>
             </ul>
         </div>
         <div class="conteneurFilmGenre">
             Top 10 :
             <ul>
+                <!-- sa plante...
                 <c:forEach var="filmLoue" items="${filmsLoue}">
                     <li><a href="http://www.allocine.fr">${filmLoue.getMonFilmLoue().getNom()}</a></li>
-                </c:forEach>
+                </c:forEach>-->
                 <li><a href="http://www.allocine.fr">Film1</a></li>
-                <li><a href="http://www.allocine.fr/">Film2</a></li>
-                <li><a href="http://www.allocine.fr/">Film3</a></li>
-                <li><a href="http://www.allocine.fr/">Film4</a></li>
-                <li><a href="http://www.allocine.fr/">Film5</a></li>
-                <li><a href="http://www.allocine.fr/">Film6</a></li>
-                <li><a href="http://www.allocine.fr/">Film7</a></li>
-                <li><a href="http://www.allocine.fr/">Film8</a></li>
-                <li><a href="http://www.allocine.fr/">Film9</a></li>
-                <li><a href="http://www.allocine.fr/">Film10</a></li>
+                <li><a href="Film">Film2</a></li>
+                <li><a href="Film">Film3</a></li>
+                <li><a href="Film">Film4</a></li>
+                <li><a href="Film">Film5</a></li>
+                <li><a href="Film">Film6</a></li>
+                <li><a href="Film">Film7</a></li>
+                <li><a href="Film">Film8</a></li>
+                <li><a href="Film">Film9</a></li>
+                <li><a href="Film">Film10</a></li>
             </ul>
         </div>
         <div class="conteneurFilmGenre">
             Genre :
             <ul>
-                <li><a href="http://www.allocine.fr">Genre1</a></li>
-                <li><a href="http://www.allocine.fr/">Genre2</a></li>
-                <li><a href="http://www.allocine.fr/">Genre3</a></li>
-                <li><a href="http://www.allocine.fr/">Genre4</a></li>
-                <li><a href="http://www.allocine.fr/">Genre5</a></li>
-                <li><a href="http://www.allocine.fr/">Genre6</a></li>
-                <li><a href="http://www.allocine.fr/">Genre7</a></li>
-                <li><a href="http://www.allocine.fr/">Genre8</a></li>
-                <li><a href="http://www.allocine.fr/">Genre9</a></li>
-                <li><a href="http://www.allocine.fr/">Genre10</a></li>
+                <li><a href="Categorie">Genre1</a></li>
+                <li><a href="Categorie">Genre2</a></li>
+                <li><a href="Categorie">Genre3</a></li>
+                <li><a href="Categorie">Genre4</a></li>
+                <li><a href="Categorie">Genre5</a></li>
+                <li><a href="Categorie">Genre6</a></li>
+                <li><a href="Categorie">Genre7</a></li>
+                <li><a href="Categorie">Genre8</a></li>
+                <li><a href="Categorie">Genre9</a></li>
+                <li><a href="Categorie">Genre10</a></li>
             </ul>
         </div>
         <div id="tag">
             Tag : 
-            <a href="http://www.allocine.fr/">Tag1</a>, 
-            <a href="http://www.allocine.fr/">Tag1</a>,
-            <a href="http://www.allocine.fr/">Tag1</a>, 
-            <a href="http://www.allocine.fr/">Tag1</a>, 
-            <a href="http://www.allocine.fr/">Tag1</a>, 
-            <a href="http://www.allocine.fr/">Tag1</a>
+            <a href="Film">Tag1</a>, 
+            <a href="Film">Tag1</a>,
+            <a href="Film">Tag1</a>, 
+            <a href="Film">Tag1</a>, 
+            <a href="Film">Tag1</a>, 
+            <a href="Film">Tag1</a>
         </div>
         <div id="footer">
             <div>
