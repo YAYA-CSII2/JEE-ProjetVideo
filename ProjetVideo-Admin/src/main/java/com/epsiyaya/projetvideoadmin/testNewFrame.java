@@ -30,17 +30,23 @@ public class testNewFrame extends javax.swing.JFrame {
 
         jCard = new javax.swing.JPanel();
         panelConnexion1 = new com.epsiyaya.projetvideoadmin.PanelConnexion();
+        panelCategorie1 = new com.epsiyaya.projetvideoadmin.panelCategorie();
+        panelFilm1 = new com.epsiyaya.projetvideoadmin.panelFilm();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuItem_Film = new javax.swing.JMenuItem();
         menuItem_Categ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 700));
         setResizable(false);
 
         jCard.setName("jCard");
+        jCard.setPreferredSize(new java.awt.Dimension(900, 680));
         jCard.setLayout(new java.awt.CardLayout());
-        jCard.add(panelConnexion1, "cardConnexion");
+        jCard.add(panelConnexion1, "CARTE_CON");
+        jCard.add(panelCategorie1, "CARTE_CATEG");
+        jCard.add(panelFilm1, "CARTE_FILM");
 
         jMenuBar1.setPreferredSize(new java.awt.Dimension(56, 20));
 
@@ -70,7 +76,7 @@ public class testNewFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jCard, javax.swing.GroupLayout.DEFAULT_SIZE, 1303, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,13 +87,13 @@ public class testNewFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItem_FilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_FilmActionPerformed
-        CardLayout cl = (CardLayout) (this.getParent().getLayout());
-        cl.show(this.getParent(), "CARTE_FILM");
+        CardLayout cl = (CardLayout) (jCard.getLayout());
+        cl.show(jCard, "CARTE_FILM");
     }//GEN-LAST:event_menuItem_FilmActionPerformed
 
     private void menuItem_CategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_CategActionPerformed
-        CardLayout cl = (CardLayout) (this.getParent().getLayout());
-        cl.show(this.getParent(), "CARTE_CATEG");
+        CardLayout cl = (CardLayout) (jCard.getLayout());
+        cl.show(jCard, "CARTE_CATEG");
     }//GEN-LAST:event_menuItem_CategActionPerformed
 
     /**
@@ -137,6 +143,8 @@ public class testNewFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem menuItem_Categ;
     private javax.swing.JMenuItem menuItem_Film;
+    private com.epsiyaya.projetvideoadmin.panelCategorie panelCategorie1;
     private com.epsiyaya.projetvideoadmin.PanelConnexion panelConnexion1;
+    private com.epsiyaya.projetvideoadmin.panelFilm panelFilm1;
     // End of variables declaration//GEN-END:variables
 }
