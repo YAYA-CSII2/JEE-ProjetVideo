@@ -6,16 +6,13 @@ package com.epsiyaya.projetvideoadmin;
 
 import java.awt.CardLayout;
 
-/**
- *
- * @author Al4r1c
- */
-public class testNewFrame extends javax.swing.JFrame {
+
+public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form testNewFrame
      */
-    public testNewFrame() {
+    public MainFrame() {
         initComponents();
     }
 
@@ -117,13 +114,13 @@ public class testNewFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(testNewFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(testNewFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(testNewFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(testNewFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -133,7 +130,7 @@ public class testNewFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new testNewFrame().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }
