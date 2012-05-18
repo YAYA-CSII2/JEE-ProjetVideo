@@ -16,6 +16,14 @@
         <servlet-name>Inscription</servlet-name>
         <servlet-class>com.projetvideo.controlleur.Inscription</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Film</servlet-name>
+        <servlet-class>com.projetvideo.controlleur.Film</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Categorie</servlet-name>
+        <servlet-class>com.projetvideo.controlleur.Categorie</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Accueil</servlet-name>
         <url-pattern>/Accueil</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>Inscription</servlet-name>
         <url-pattern>/Inscription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Film</servlet-name>
+        <url-pattern>/Film</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Categorie</servlet-name>
+        <url-pattern>/Categorie</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

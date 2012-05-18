@@ -1,9 +1,8 @@
 package com.projetvideo.controlleur;
 
-import com.epsiyaya.projetvideoejb.distant.remote.IFilmLoueSession;
-import com.epsiyaya.projetvideoejb.metier.model.FilmLoue;
+import com.epsiyaya.projetvideoejb.distant.remote.IPannierSession;
+import com.epsiyaya.projetvideoejb.metier.model.Film;
 import java.io.IOException;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Accueil extends HttpServlet {
 
-    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IFilmLoueSession";
+    public static final String DEFAULT_JNDI_NAME = "com.epsiyaya.projetvideoejb.distant.remote.IPannierSession";
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -34,16 +33,12 @@ public class Accueil extends HttpServlet {
         try {
             Context context = new InitialContext();
             Object obj = context.lookup(DEFAULT_JNDI_NAME);
-            IFilmLoueSession flSession = (IFilmLoueSession) PortableRemoteObject.narrow(obj, IFilmLoueSession.class);
+            IPannierSession testSess = (IPannierSession) PortableRemoteObject.narrow(obj, IPannierSession.class);
             
-            Set<FilmLoue> ss = flSession.getTenLast();
-            for (FilmLoue fl: ss) {
-                System.out.println("Acteur: " + fl.getMonFilmLoue().getNom());
-            }
-            
-            
-            //request.setAttribute("filmsLoue", flSession.getTenLast());
-            
+            //Sa plante...
+            //Film f = testSess.getTenLast();
+            //request.setAttribute("filmsLoue", testSess.getTenLast());
+
             request.getRequestDispatcher("webApp/index.jsp").forward(request, response);
         } catch (NamingException ex) {
             Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
